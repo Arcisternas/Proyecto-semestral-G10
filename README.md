@@ -1,4 +1,4 @@
-# Proyecto semestral G21
+# Proyecto semestral G10
 Integrantes:
-Ariel Eduardo Cisternas Bustos
-Maria Jesus Catalina Olivares Michael
+- Ariel Eduardo Cisternas Bustos
+- Maria Jesus Catalina Olivares Michael
