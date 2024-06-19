@@ -1,4 +1,4 @@
-package proyecto.semestral.g5;
+package proyecto;
 
 import org.junit.jupiter.api.Test;
 
