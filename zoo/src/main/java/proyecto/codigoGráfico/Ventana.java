@@ -10,7 +10,7 @@ public class Ventana extends JFrame {
         setTitle("Zoológico");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        PanelPrincipal panelPrincipal = new PanelPrincipal();
+        PanelPrincipal panelPrincipal = new PanelPrincipal(this);
         add(panelPrincipal);
 
         

@@ -15,17 +15,17 @@ public final class App {
     public static void main(String[] args) {
         Ventana ventana = new Ventana();
         
-        //(Pruebas de lógica interna)
+        //(Pruebas de lógica interna, ignorar)
         Habitat bosque = new Bosque();
         Habitat artico = new Artico();
-        Animal Lobo = new Lobo();
-        Zoologico.getInstance().addHabitat(bosque);
-        Zoologico.getInstance().addHabitat(artico);
-        bosque.addAnimal(Lobo);
-        artico.addAnimal(Lobo);
-        System.out.println(Zoologico.getInstance().getTipoHabitats());
-        System.out.println(bosque.getTipoAnimales());
-        System.out.println(artico.getTipoAnimales());
-        
+        Habitat sabana = new Sabana();
+        Habitat selva = new Selva();
+        Habitat desierto = new Desierto();
+        for(int i=0;i<5;i++){
+            Zoologico.getInstance().addHabitat(bosque);
+            Zoologico.getInstance().addHabitat(artico);
+            Zoologico.getInstance().addHabitat(sabana);
+            Zoologico.getInstance().addHabitat(selva);
+        }
     }
 }

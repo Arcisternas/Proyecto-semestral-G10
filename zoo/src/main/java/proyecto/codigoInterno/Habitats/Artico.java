@@ -8,7 +8,7 @@ public class Artico extends Habitat{
         super();
     }
     public String getTipo(){
-        return "Artico";
+        return "Ártico";
     }
     public List<String> animalesPermitidos(){
         List<String> permitidos = Arrays.asList("Oso polar", "Pingüino", "Foca", "Morsa");
