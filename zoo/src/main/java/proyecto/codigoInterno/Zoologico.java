@@ -1,0 +1,28 @@
+package proyecto.codigoInterno;
+
+import java.util.*;
+
+import proyecto.codigoInterno.Habitats.Habitat;
+
+public class Zoologico {
+    private static Zoologico instance = new Zoologico();
+    private List<Habitat> habitats;
+    private List<String> tipoHabitats;
+    private Zoologico() {
+        habitats = new ArrayList<>();
+        tipoHabitats = new ArrayList<>();
+     }
+    public static Zoologico getInstance() {
+        return instance;
+    }
+    public void addHabitat(Habitat habitat){
+        habitats.add(habitat);
+        tipoHabitats.add(habitat.getTipo());
+    }
+    public List<Habitat> getHabitats(){
+        return habitats;
+    }
+    public List<String> getTipoHabitats(){
+        return tipoHabitats;
+    }
+}
