@@ -5,13 +5,18 @@ import java.util.*;
 import proyecto.codigoInterno.Animales.*;
 
 public abstract class Habitat {
+    private String nombre;
     private String tipo;
     protected List<Animal> animales;
     protected List<String> tipoAnimales;
     
-    public Habitat(){
+    public Habitat(String nombre){
+        this.nombre = nombre;
         animales = new ArrayList<>();
         tipoAnimales = new ArrayList<>();
+    }
+    public String getNombre(){
+        return nombre;
     }
     public abstract String getTipo();
     public List<Animal> getAnimales(){

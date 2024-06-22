@@ -3,18 +3,18 @@ package proyecto.codigoInterno;
 
 import proyecto.codigoInterno.Habitats.*;
 public class FrabricaDeHabitats {
-    public static Habitat crearHabitat(String tipoHabitat) {
+    public static Habitat crearHabitat(String nombre, String tipoHabitat) {
         switch (tipoHabitat) {
             case "Ártico":
-                return new Artico();
+                return new Artico(nombre);
             case "Bosque":
-                return new Bosque();
+                return new Bosque(nombre);
             case "Desierto":
-                return new Desierto();
+                return new Desierto(nombre);
             case "Sabana":
-                return new Sabana();
+                return new Sabana(nombre);
             case "Selva":
-                return new Selva();
+                return new Selva(nombre);
             default:
                 return null;
         }

@@ -5,8 +5,8 @@ import proyecto.codigoInterno.Animales.Animal;
 import proyecto.codigoInterno.Animales.Desierto.*;
 
 public class Desierto extends Habitat{
-    public Desierto(){
-        super();
+    public Desierto(String nombre){
+        super(nombre);
     }
     public String getTipo(){
         return "Desierto";

@@ -13,7 +13,7 @@ public class DialogoListaDeHabitats extends JDialog {
     private JButton crearHabitat;
     private JPanel panelBoton;
     public DialogoListaDeHabitats(JFrame ventana) {
-        super(ventana, "Lista de Habitats", true);
+        super(ventana, "Lista de Habitats", false);
         setLayout(new BorderLayout());
         setSize(400, 300);
         zoo = Zoologico.getInstance();
@@ -22,12 +22,7 @@ public class DialogoListaDeHabitats extends JDialog {
         scroll = new JScrollPane(panelscroll);
         add(scroll, BorderLayout.CENTER);
         crearHabitat = new JButton("Crear Habitat");
-        crearHabitat.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Pendiente, añadir nueva ventana de selección de tipo de habitat
-            }
-        });
+        crearHabitat.addActionListener(e -> abrirDialogo(ventana));
         panelBoton = new JPanel();
         panelBoton.add(crearHabitat);
         add(panelBoton, BorderLayout.SOUTH);
@@ -37,15 +32,20 @@ public class DialogoListaDeHabitats extends JDialog {
     private void actualizarPanelScroll() {
         panelscroll.removeAll();
         for (Habitat habitat : zoo.getHabitats()) {
-            PanelListaDeHabitats panel = new PanelListaDeHabitats(habitat.getTipo(), e-> irHabitat(habitat));
+            PanelListaDeHabitats panel = new PanelListaDeHabitats(habitat, e-> irHabitat(habitat));
             panelscroll.add(panel);
         }   
     }
 
     private void irHabitat(Habitat habitat) { 
-        JOptionPane.showMessageDialog(this, "Yendo al hábitat: " + habitat.getTipo());
+        JOptionPane.showMessageDialog(this, "Yendo al hábitat: " + habitat.getNombre());
         Zoologico.getInstance().setHabitatActual(habitat);
         PanelHabitat.getInstance().actualizarimagen();
+        this.dispose();
+    }
+    private void abrirDialogo(JFrame ventana) {
+        DialogoEleccionTipoHabitatNuevo elegir = new DialogoEleccionTipoHabitatNuevo(ventana);
+        elegir.setVisible(true);
         this.dispose();
     }
 }

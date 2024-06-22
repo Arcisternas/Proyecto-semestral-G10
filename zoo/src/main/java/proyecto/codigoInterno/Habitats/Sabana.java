@@ -5,8 +5,8 @@ import proyecto.codigoInterno.Animales.Animal;
 import proyecto.codigoInterno.Animales.Sabana.*;
 
 public class Sabana extends Habitat{
-    public Sabana(){
-        super();
+    public Sabana(String nombre){
+        super(nombre);
     }
     public String getTipo(){
         return "Sabana";
