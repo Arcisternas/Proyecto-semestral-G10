@@ -12,9 +12,7 @@ import proyecto.codigoInterno.Animales.Artico.*;
 public final class App {
     private App() {
     }
-    public static void main(String[] args) {
-        Ventana ventana = new Ventana();
-        
+    public static void main(String[] args) { 
         //(Pruebas de lógica interna, ignorar)
         Habitat bosque = new Bosque();
         Habitat artico = new Artico();
@@ -26,6 +24,8 @@ public final class App {
             Zoologico.getInstance().addHabitat(artico);
             Zoologico.getInstance().addHabitat(sabana);
             Zoologico.getInstance().addHabitat(selva);
+    
         }
+        Ventana ventana = new Ventana();
     }
 }

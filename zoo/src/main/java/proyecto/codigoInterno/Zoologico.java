@@ -8,6 +8,7 @@ public class Zoologico {
     private static Zoologico instance = new Zoologico();
     private List<Habitat> habitats;
     private List<String> tipoHabitats;
+    private Habitat habitatActual;
     private Zoologico() {
         habitats = new ArrayList<>();
         tipoHabitats = new ArrayList<>();
@@ -24,5 +25,11 @@ public class Zoologico {
     }
     public List<String> getTipoHabitats(){
         return tipoHabitats;
+    }
+    public void setHabitatActual(Habitat actual) {
+        habitatActual = actual;
+    }
+    public Habitat getHabitatActual() {
+        return habitatActual;
     }
 }

@@ -31,20 +31,21 @@ public class DialogoListaDeHabitats extends JDialog {
         panelBoton = new JPanel();
         panelBoton.add(crearHabitat);
         add(panelBoton, BorderLayout.SOUTH);
-        actualizarListaHabitats();
+        actualizarPanelScroll();
     }
 
-    private void actualizarListaHabitats() {
+    private void actualizarPanelScroll() {
         panelscroll.removeAll();
         for (Habitat habitat : zoo.getHabitats()) {
-            PanelListaDeHabitats panel = new PanelListaDeHabitats(habitat.getTipo(), e->irHabitat(habitat.getTipo()));
+            PanelListaDeHabitats panel = new PanelListaDeHabitats(habitat.getTipo(), e-> irHabitat(habitat));
             panelscroll.add(panel);
         }   
     }
 
-    private void irHabitat(String tipohabitat) { 
-        //Pendiente, cambiar fondo a hábitat seleccionado
-        JOptionPane.showMessageDialog(this, "Yendo al hábitat: " + tipohabitat);
+    private void irHabitat(Habitat habitat) { 
+        JOptionPane.showMessageDialog(this, "Yendo al hábitat: " + habitat.getTipo());
+        Zoologico.getInstance().setHabitatActual(habitat);
+        PanelHabitat.getInstance().actualizarimagen();
         this.dispose();
     }
 }
