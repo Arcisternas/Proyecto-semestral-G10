@@ -2,16 +2,12 @@ package proyecto.codigoGráfico;
 
 import javax.swing.*;
 import java.awt.*;
-
-import proyecto.codigoInterno.FrabricaDeHabitats;
-import proyecto.codigoInterno.Zoologico;
-
 public class DialogoEleccionTipoHabitatNuevo extends JDialog{
-    private Zoologico zoo = Zoologico.getInstance();
     public DialogoEleccionTipoHabitatNuevo(JFrame ventana){
         super(ventana, "Elegir tipo de habitat", true);
         setLayout(new GridLayout(1, 5));
         setSize(500, 100);
+        setLocationRelativeTo(null);
         JButton bosque = new JButton("Bosque");
         JButton artico = new JButton("Artico");
         JButton sabana = new JButton("Sabana");
@@ -29,8 +25,7 @@ public class DialogoEleccionTipoHabitatNuevo extends JDialog{
         add(desierto);
     }
     private void abirDialogo(JFrame ventana, String tipo){
-        DialogoEleccionNombreHabitatNuevo elegir = new DialogoEleccionNombreHabitatNuevo(ventana, tipo);
+        DialogoEleccionNombreHabitatNuevo elegir = new DialogoEleccionNombreHabitatNuevo(ventana,this, tipo);
         elegir.setVisible(true);
-        this.dispose();
     }
 }

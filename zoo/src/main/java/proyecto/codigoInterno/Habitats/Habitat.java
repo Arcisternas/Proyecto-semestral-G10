@@ -6,7 +6,6 @@ import proyecto.codigoInterno.Animales.*;
 
 public abstract class Habitat {
     private String nombre;
-    private String tipo;
     protected List<Animal> animales;
     protected List<String> tipoAnimales;
     

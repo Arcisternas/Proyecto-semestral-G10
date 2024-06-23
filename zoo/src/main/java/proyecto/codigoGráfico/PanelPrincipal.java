@@ -11,15 +11,11 @@ public class PanelPrincipal extends JPanel{
         super();
         zoo = Zoologico.getInstance();
         setLayout(new BorderLayout());
-        PanelIntro panelIntro = new PanelIntro();
+        PanelHabitat panelHabitat = PanelHabitat.getInstance();
         PanelBotones panelBotones = new PanelBotones(ventana);
-        if (zoo.getHabitats().size() == 0){
-            add(panelIntro, BorderLayout.CENTER);
-        }
-        else{
-            PanelHabitat panelHabitat = PanelHabitat.getInstance();
-            add(panelHabitat, BorderLayout.CENTER);
-        }
+        zoo.setHabitatActual(zoo.getHabitatActual()); //En caso de que se inicialice en zoo con un hábitat ya existente
+        panelHabitat.actualizarimagen();
+        add(panelHabitat, BorderLayout.CENTER);
         add(panelBotones, BorderLayout.SOUTH);
     }
 }

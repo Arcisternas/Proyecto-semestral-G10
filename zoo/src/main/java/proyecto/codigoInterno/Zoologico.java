@@ -2,6 +2,7 @@ package proyecto.codigoInterno;
 
 import java.util.*;
 
+import proyecto.codigoGráfico.PanelHabitat;
 import proyecto.codigoInterno.Habitats.Habitat;
 //Nota: El profesor dijo que quizá no sea necesario implementar el patrón Singleton en esta clase
 public class Zoologico {
@@ -18,6 +19,10 @@ public class Zoologico {
     }
     public void addHabitat(String nombre, String tipoHabitat) {
         habitats.add(FrabricaDeHabitats.crearHabitat(nombre, tipoHabitat));
+        if(habitats.size() == 1){
+            habitatActual = habitats.get(0);
+        }
+        PanelHabitat.getInstance().actualizarimagen();
         nombreHabitats.add(nombre);
     }
     public List<Habitat> getHabitats(){
