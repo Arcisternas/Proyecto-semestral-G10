@@ -9,7 +9,7 @@ public class Mono extends Animal implements Herbivoro{
     private static ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     private ScheduledFuture<?> futureTask;
     private boolean come;
-    private String nombre;
+   
 
     public Mono(String nombre){
         super(nombre);
@@ -21,9 +21,7 @@ public class Mono extends Animal implements Herbivoro{
     public String getHabitat(){
         return "Selva";
     }
-    public String getNombre(){
-        return nombre;
-    }
+   
     @Override
     public boolean comerPlanta(boolean come) {
         this.come = come;

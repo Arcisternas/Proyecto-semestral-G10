@@ -9,7 +9,7 @@ public class Zorro extends Animal implements Carnivoro{
     private static ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     private ScheduledFuture<?> futureTask;
     private boolean come;
-    private String nombre;
+   
 
     public Zorro(String nombre){
         super(nombre);
@@ -21,9 +21,7 @@ public class Zorro extends Animal implements Carnivoro{
     public String getHabitat(){
         return "Bosque";
     }
-    public String getNombre(){
-        return nombre;
-    }
+    
     @Override
     public boolean comerCarne(boolean come) {
         this.come = come;

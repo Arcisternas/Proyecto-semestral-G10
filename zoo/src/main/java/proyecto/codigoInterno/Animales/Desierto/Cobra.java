@@ -10,7 +10,7 @@ public class Cobra extends Animal implements Carnivoro{
     private static ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     private ScheduledFuture<?> futureTask;
     private boolean come;
-    private String nombre;
+    
     
     public Cobra(String nombre){
         super(nombre);
@@ -22,9 +22,7 @@ public class Cobra extends Animal implements Carnivoro{
     public String getHabitat(){
         return "Desierto";
     }
-    public String getNombre(){
-        return nombre;
-    }
+    
     @Override
     public boolean comerCarne(boolean come) {
         this.come = come;

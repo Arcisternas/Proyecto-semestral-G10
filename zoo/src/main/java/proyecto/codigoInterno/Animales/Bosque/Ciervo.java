@@ -10,7 +10,7 @@ public class Ciervo extends Animal implements Herbivoro{
     private static ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     private ScheduledFuture<?> futureTask;
     private boolean come;
-    private String nombre;
+   
 
     public Ciervo(String nombre){
         super(nombre);
@@ -22,9 +22,7 @@ public class Ciervo extends Animal implements Herbivoro{
     public String getHabitat(){
         return "Bosque";
     }
-    public String getNombre(){
-        return nombre;
-    }
+    
     @Override
     public boolean comerPlanta(boolean come) {
         this.come = come;
