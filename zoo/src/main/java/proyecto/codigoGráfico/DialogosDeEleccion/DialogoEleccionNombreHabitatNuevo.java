@@ -1,4 +1,4 @@
-package proyecto.codigoGráfico;
+package proyecto.codigoGráfico.DialogosDeEleccion;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,7 +9,7 @@ public class DialogoEleccionNombreHabitatNuevo extends JDialog{
     private JTextField nombre;
     private JDialog dialogoanterior;
     public DialogoEleccionNombreHabitatNuevo(JFrame ventana,JDialog dialogoanterior, String tipoHabitat){
-        super(ventana, "Elegir nombre de habitat", true);
+        super(ventana, "Elija el nombre de habitat", true);
         this.dialogoanterior = dialogoanterior;
         setLayout(new BorderLayout());
         setSize(300, 100);

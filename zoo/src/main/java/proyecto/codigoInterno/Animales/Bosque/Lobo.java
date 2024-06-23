@@ -2,8 +2,8 @@ package proyecto.codigoInterno.Animales.Bosque;
 
 import proyecto.codigoInterno.Animales.Animal;
 public class Lobo extends Animal{
-    public Lobo(){
-        super();
+    public Lobo(String nombre){
+        super(nombre);
     }
     public String getEspecie(){
         return "Lobo";

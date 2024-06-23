@@ -3,8 +3,8 @@ package proyecto.codigoInterno.Animales.Desierto;
 import proyecto.codigoInterno.Animales.Animal;
 
 public class Camello extends Animal{
-    public Camello(){
-        super();
+    public Camello(String nombre){
+        super(nombre);
     }
     public String getEspecie(){
         return "Camello";

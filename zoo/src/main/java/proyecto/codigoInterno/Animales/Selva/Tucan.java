@@ -3,8 +3,8 @@ package proyecto.codigoInterno.Animales.Selva;
 import proyecto.codigoInterno.Animales.Animal;
 
 public class Tucan extends Animal{
-    public Tucan(){
-        super();
+    public Tucan(String nombre){
+        super(nombre);
     }
     public String getEspecie(){
         return "Tucán";

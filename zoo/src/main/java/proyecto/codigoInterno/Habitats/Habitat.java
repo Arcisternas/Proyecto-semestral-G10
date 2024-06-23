@@ -2,6 +2,7 @@ package proyecto.codigoInterno.Habitats;
 
 import java.util.*;
 
+import proyecto.codigoInterno.FabricaDeAnimales;
 import proyecto.codigoInterno.Animales.*;
 
 public abstract class Habitat {
@@ -24,10 +25,10 @@ public abstract class Habitat {
     public List<String> getTipoAnimales(){
         return tipoAnimales;
     }
-    public void addAnimal(Animal animal){
-        if (animalesPermitidos().contains(animal.getEspecie())){
-        animales.add(animal);
-        tipoAnimales.add(animal.getEspecie());
+    public void addAnimal(String nombre, String tipo){
+        if (animalesPermitidos().contains(tipo)){
+        animales.add(FabricaDeAnimales.crearAnimal(nombre,tipo));
+        tipoAnimales.add(tipo);
         }
         else{
             System.out.println("No se puede agregar este animal al habitat");

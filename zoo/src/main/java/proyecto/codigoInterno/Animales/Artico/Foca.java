@@ -11,8 +11,8 @@ import proyecto.codigoInterno.Animales.Animal;
 public class Foca extends Animal implements Carnivoro{
     private static ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
-    public Foca(){
-        super();
+    public Foca(String nombre){
+        super(nombre);
     }
     public String getEspecie(){
         return "Foca";

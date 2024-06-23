@@ -1,4 +1,4 @@
-package proyecto.codigoGráfico;
+package proyecto.codigoGráfico.PanelesDeListas;
 
 import javax.swing.*;
 

@@ -1,20 +1,28 @@
 package proyecto.codigoGráfico;
 
 import javax.swing.*;
+
+import proyecto.codigoGráfico.DialogosDeListas.DialogoListaDeAnimales;
+import proyecto.codigoGráfico.DialogosDeListas.DialogoListaDeHabitats;
+
 import java.awt.*;
 
 public class PanelBotones extends JPanel {
     public PanelBotones(Ventana ventana) {
         super();
         setLayout(new GridLayout(1, 3));
-        JButton botonLista = new JButton("Lista de Habitats");
-        JButton boton2 = new JButton("Lista de Animales");
+        JButton botonHabitats = new JButton("Lista de Habitats");
+        JButton botonAnimales = new JButton("Lista de Animales");
         JButton boton3 = new JButton("Alimentar");
-        add(botonLista);
-        add(boton2);
+        add(botonHabitats);
+        add(botonAnimales);
         add(boton3);
-        botonLista.addActionListener(e -> {
+        botonHabitats.addActionListener(e -> {
             DialogoListaDeHabitats lista = new DialogoListaDeHabitats(ventana);
+            lista.setVisible(true);
+        });
+        botonAnimales.addActionListener(e -> {
+            DialogoListaDeAnimales lista = new DialogoListaDeAnimales(ventana);
             lista.setVisible(true);
         });
     }

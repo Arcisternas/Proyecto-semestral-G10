@@ -3,8 +3,8 @@ package proyecto.codigoInterno.Animales.Sabana;
 import proyecto.codigoInterno.Animales.Animal;
 
 public class Jirafa extends Animal{
-    public Jirafa(){
-        super();
+    public Jirafa(String nombre){
+        super(nombre);
     }
     public String getEspecie(){
         return "Jirafa";

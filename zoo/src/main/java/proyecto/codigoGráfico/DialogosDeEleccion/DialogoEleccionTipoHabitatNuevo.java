@@ -1,10 +1,10 @@
-package proyecto.codigoGráfico;
+package proyecto.codigoGráfico.DialogosDeEleccion;
 
 import javax.swing.*;
 import java.awt.*;
 public class DialogoEleccionTipoHabitatNuevo extends JDialog{
     public DialogoEleccionTipoHabitatNuevo(JFrame ventana){
-        super(ventana, "Elegir tipo de habitat", true);
+        super(ventana, "Elija el tipo de habitat", true);
         setLayout(new GridLayout(1, 5));
         setSize(500, 100);
         setLocationRelativeTo(null);

@@ -3,8 +3,8 @@ package proyecto.codigoInterno.Animales.Artico;
 import proyecto.codigoInterno.Animales.Animal;
 
 public class OsoPolar extends Animal{
-    public OsoPolar(){
-        super();
+    public OsoPolar(String nombre){
+        super(nombre);
     }
     public String getEspecie(){
         return "Oso Polar";
