@@ -1,18 +1,19 @@
 package proyecto.codigoInterno.Animales.Artico;
 
-import java.util.List;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 import proyecto.codigoInterno.Alimento.Carnivoro;
 import proyecto.codigoInterno.Animales.Animal;
 
 public class Foca extends Animal implements Carnivoro{
     private static ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+    private ScheduledFuture<?> futureTask;
+    private boolean come;
+    private String nombre;
 
     public Foca(String nombre){
         super(nombre);
+        this.come = false;
     }
     public String getEspecie(){
         return "Foca";
@@ -20,23 +21,28 @@ public class Foca extends Animal implements Carnivoro{
     public String getHabitat(){
         return "Artico";
     }
+    public String getNombre(){
+        return nombre;
+    }
     @Override
-    public String comerCarne() {
-        return "carne";
+    public boolean comerCarne(boolean come) {
+        this.come = come;
+        return come;
     }
     @Override
     public String pedirCarne() {
+        if(comerCarne(come)){
+            futureTask.cancel(true);
+        }
+        futureTask = scheduler.schedule(() -> {
+            // Aquí asumimos que la clase gestora tiene un método para manejar la desaparición
+            desaparecer();
+        }, 5, TimeUnit.MINUTES);
         return "Necesita carne...";
     }
     @Override
-    public void contadorDesaparicion(List<Animal> animales) {
-        scheduler.schedule(() -> {
-            synchronized (animales) {
-                if (animales.contains(this)) {
-                    animales.remove(this);
-                    System.out.println("La foca ha desaparecido de la lista por no recibir carne en 5 minutos.");
-                }
-            }
-        }, 5, TimeUnit.MINUTES);
+    public void desaparecer(){
+        
+        System.out.println("La foca ha desaparecido de la lista por no recibir carne en 5 minutos.");
     }
 }
