@@ -2,7 +2,6 @@ package proyecto.codigoGráfico;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import proyecto.codigoInterno.Zoologico;
 import proyecto.codigoInterno.Habitats.Habitat;
 
@@ -16,6 +15,7 @@ public class DialogoListaDeHabitats extends JDialog {
         super(ventana, "Lista de Habitats", false);
         setLayout(new BorderLayout());
         setSize(400, 300);
+        setLocationRelativeTo(null);
         zoo = Zoologico.getInstance();
         panelscroll = new JPanel();
         panelscroll.setLayout(new BoxLayout(panelscroll, BoxLayout.Y_AXIS));
@@ -46,6 +46,8 @@ public class DialogoListaDeHabitats extends JDialog {
     private void abrirDialogo(JFrame ventana) {
         DialogoEleccionTipoHabitatNuevo elegir = new DialogoEleccionTipoHabitatNuevo(ventana);
         elegir.setVisible(true);
-        this.dispose();
+        actualizarPanelScroll();
+        this.repaint();
+        this.setVisible(true);
     }
 }

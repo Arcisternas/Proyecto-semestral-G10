@@ -2,6 +2,7 @@ package proyecto.codigoGráfico;
 
 import javax.swing.*;
 
+import proyecto.codigoInterno.Zoologico;
 import proyecto.codigoInterno.Habitats.Habitat;
 
 import java.awt.*;
@@ -9,10 +10,15 @@ import java.awt.event.*;
 
 public class PanelListaDeHabitats extends JPanel{
     private JLabel etiquetaHabitat;
+    private String texto;
     private JButton ir;
     public PanelListaDeHabitats(Habitat habitat, ActionListener listener) {
         setLayout(new BorderLayout());
-        etiquetaHabitat = new JLabel(habitat.getNombre()+" ("+habitat.getTipo()+")");
+        texto = habitat.getNombre()+" ("+habitat.getTipo()+")";
+        if (habitat == Zoologico.getInstance().getHabitatActual()) {
+            texto += " (Actual)";
+        }
+        etiquetaHabitat = new JLabel(texto);
         ir = new JButton("Ir");
         ir.addActionListener(listener);
         add(etiquetaHabitat, BorderLayout.CENTER);

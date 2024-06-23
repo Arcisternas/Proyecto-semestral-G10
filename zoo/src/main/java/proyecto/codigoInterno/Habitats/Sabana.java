@@ -1,8 +1,6 @@
 package proyecto.codigoInterno.Habitats;
 
 import java.util.*;
-import proyecto.codigoInterno.Animales.Animal;
-import proyecto.codigoInterno.Animales.Sabana.*;
 
 public class Sabana extends Habitat{
     public Sabana(String nombre){
