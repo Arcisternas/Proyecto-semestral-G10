@@ -1,5 +1,7 @@
 package proyecto.codigoInterno.Animales;
 
+import proyecto.codigoInterno.Habitats.Habitat;
+
 public abstract class Animal {
     private String nombre;
     public Animal(String nombre){
@@ -10,4 +12,7 @@ public abstract class Animal {
     public String getNombre(){
         return nombre;
     }
+    public abstract void pedirComida(Habitat habitat);
+    public abstract void desaparecer(Habitat habitat);
+    public abstract void comer();
 }

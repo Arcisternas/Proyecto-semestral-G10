@@ -4,12 +4,13 @@ import java.util.concurrent.*;
 
 import proyecto.codigoInterno.Alimento.Carnivoro;
 import proyecto.codigoInterno.Animales.Animal;
+import proyecto.codigoInterno.Habitats.Habitat;
 
 public class Zorro extends Animal implements Carnivoro{
     private static ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     private ScheduledFuture<?> futureTask;
     private boolean come;
-   
+   private Habitat habitat;
 
     public Zorro(String nombre){
         super(nombre);
@@ -33,14 +34,22 @@ public class Zorro extends Animal implements Carnivoro{
             futureTask.cancel(true);
         }
         futureTask = scheduler.schedule(() -> {
-            // Aquí asumimos que la clase gestora tiene un método para manejar la desaparición
-            desaparecer();
+            desaparecer(habitat);
         }, 5, TimeUnit.MINUTES);
         return "Necesita carne...";
     }
     @Override
-    public void desaparecer(){
-        
-        System.out.println("La foca ha desaparecido de la lista por no recibir carne en 5 minutos.");
+    public void desaparecer(Habitat habitat){
+        habitat.eliminarAnimal(this);
+    }
+    @Override
+    public void pedirComida(Habitat habitat) {
+        this.habitat = habitat;
+       pedirCarne();
+    }
+    public void comer() {
+        comerCarne(come);
+        pedirComida(habitat);
+        come = false;
     }
 }

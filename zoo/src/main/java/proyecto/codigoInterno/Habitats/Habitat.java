@@ -3,12 +3,14 @@ package proyecto.codigoInterno.Habitats;
 import java.util.*;
 
 import proyecto.codigoInterno.FabricaDeAnimales;
+import proyecto.codigoInterno.Zoologico;
 import proyecto.codigoInterno.Animales.*;
 
 public abstract class Habitat {
     private String nombre;
     protected List<Animal> animales;
     protected List<String> tipoAnimales;
+    private Zoologico zoo = Zoologico.getInstance();
     
     public Habitat(String nombre){
         this.nombre = nombre;
@@ -27,12 +29,22 @@ public abstract class Habitat {
     }
     public void addAnimal(String nombre, String tipo){
         if (animalesPermitidos().contains(tipo)){
-        animales.add(FabricaDeAnimales.crearAnimal(nombre,tipo));
+        Animal animal = (FabricaDeAnimales.crearAnimal(nombre,tipo));
+        animales.add(animal);
         tipoAnimales.add(tipo);
+        animal.pedirComida(zoo.getHabitatActual());
         }
         else{
             System.out.println("No se puede agregar este animal al habitat");
         }
+    }
+    public void alimentarAnimales() {
+        for (Animal animal : animales) {
+            animal.comer();  // Alimentar a cada animal en el hábitat
+        }
+    }
+    public void eliminarAnimal(Animal animal){
+        animales.remove(animal);
     }
     public abstract List<String> animalesPermitidos();
 }
