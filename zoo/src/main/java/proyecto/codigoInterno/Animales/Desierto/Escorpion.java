@@ -18,7 +18,7 @@ public class Escorpion extends Animal implements Carnivoro{
         this.come = false;
     }
     public String getEspecie(){
-        return "Escorpion";
+        return "Escorpión";
     }
     public String getHabitat(){
         return "Desierto";

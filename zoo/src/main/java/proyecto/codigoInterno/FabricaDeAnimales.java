@@ -29,7 +29,7 @@ public class FabricaDeAnimales {
                 return new Zorro(nombre);
             case "Camello":
                 return new Camello(nombre);
-            case "Escorpion":
+            case "Escorpión":
                 return new Escorpion(nombre);
             case "Cobra":
                 return new Cobra(nombre);
@@ -41,7 +41,7 @@ public class FabricaDeAnimales {
                 return new Elefante(nombre);
             case "Jirafa":
                 return new Jirafa(nombre);
-            case "Leon":
+            case "León":
                 return new Leon(nombre);
             case "Mono":
                 return new Mono(nombre);
@@ -49,7 +49,7 @@ public class FabricaDeAnimales {
                 return new Serpiente(nombre);
             case "Tigre":
                 return new Tigre(nombre);
-            case "Tucan":
+            case "Tucán":
                 return new Tucan(nombre);
             default:
                 return null;

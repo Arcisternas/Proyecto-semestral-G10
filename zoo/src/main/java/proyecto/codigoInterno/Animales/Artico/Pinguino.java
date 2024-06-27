@@ -17,7 +17,7 @@ public class Pinguino extends Animal implements Carnivoro{
         this.come = false;
     }
     public String getEspecie(){
-        return "Pinguino";
+        return "Pingüino";
     }
     public String getHabitat(){
         return "Artico";

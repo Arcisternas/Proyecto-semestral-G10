@@ -19,7 +19,7 @@ public class Leon extends Animal implements Carnivoro{
         this.come = false;
     }
     public String getEspecie(){
-        return "Leon";
+        return "León";
     }
     public String getHabitat(){
         return "Sabana";

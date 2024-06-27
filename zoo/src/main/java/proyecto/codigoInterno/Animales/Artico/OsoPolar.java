@@ -45,7 +45,7 @@ public class OsoPolar extends Animal implements Carnivoro{
     @Override
     public void pedirComida(Habitat habitat) {
         this.habitat = habitat;
-       pedirCarne();
+        pedirCarne();
     }
     public void comer() {
         comerCarne(come);

@@ -7,11 +7,11 @@ public abstract class Animal {
     public Animal(String nombre){
         this.nombre = nombre;
     }
-    public abstract String getEspecie();
-    public abstract String getHabitat();
     public String getNombre(){
         return nombre;
     }
+    public abstract String getEspecie();
+    public abstract String getHabitat();
     public abstract void pedirComida(Habitat habitat);
     public abstract void desaparecer(Habitat habitat);
     public abstract void comer();

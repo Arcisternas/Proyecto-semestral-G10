@@ -9,7 +9,7 @@ public class Artico extends Habitat{
         return "Ártico";
     }
     public List<String> animalesPermitidos(){
-        List<String> permitidos = Arrays.asList("Oso polar", "Pingüino", "Foca", "Morsa");
+        List<String> permitidos = Arrays.asList("Oso Polar", "Pingüino", "Foca", "Morsa");
         return permitidos;
     }
 }

@@ -18,7 +18,7 @@ public class Tucan extends Animal  implements Herbivoro{
         this.come = false;
     }
     public String getEspecie(){
-        return "Tucan";
+        return "Tucán";
     }
     public String getHabitat(){
         return "Selva";
