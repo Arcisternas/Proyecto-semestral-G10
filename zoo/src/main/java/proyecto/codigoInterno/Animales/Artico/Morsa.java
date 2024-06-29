@@ -2,6 +2,7 @@ package proyecto.codigoInterno.Animales.Artico;
 
 
 import java.util.concurrent.*;
+import javax.swing.ImageIcon;
 
 import proyecto.codigoInterno.Alimento.Carnivoro;
 import proyecto.codigoInterno.Animales.Animal;
@@ -16,6 +17,7 @@ public class Morsa extends Animal implements Carnivoro{
     public Morsa(String nombre){
         super(nombre);
         this.come = false;
+        imagenIcon = new ImageIcon(getClass().getResource("/animales/Artico/morsa.png"));
     }
     public String getEspecie(){
         return "Morsa";
@@ -23,7 +25,6 @@ public class Morsa extends Animal implements Carnivoro{
     public String getHabitat(){
         return "Artico";
     }
-    
     @Override
     public boolean comerCarne(boolean come) {
         this.come = come;

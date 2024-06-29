@@ -2,6 +2,7 @@ package proyecto.codigoInterno.Animales.Sabana;
 
 
 import java.util.concurrent.*;
+import javax.swing.ImageIcon;
 
 import proyecto.codigoInterno.Alimento.Carnivoro;
 import proyecto.codigoInterno.Animales.Animal;
@@ -17,6 +18,7 @@ public class Leon extends Animal implements Carnivoro{
     public Leon(String nombre){
         super(nombre);
         this.come = false;
+        imagenIcon = new ImageIcon(getClass().getResource("/animales/Sabana/leon.png"));
     }
     public String getEspecie(){
         return "León";

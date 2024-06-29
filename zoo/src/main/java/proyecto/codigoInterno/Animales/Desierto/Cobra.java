@@ -2,6 +2,7 @@ package proyecto.codigoInterno.Animales.Desierto;
 
 
 import java.util.concurrent.*;
+import javax.swing.ImageIcon;
 
 import proyecto.codigoInterno.Alimento.Carnivoro;
 import proyecto.codigoInterno.Animales.Animal;
@@ -16,6 +17,7 @@ public class Cobra extends Animal implements Carnivoro{
     public Cobra(String nombre){
         super(nombre);
         this.come = false;
+        imagenIcon = new ImageIcon(getClass().getResource("/animales/Desierto/cobra.png"));
     }
     public String getEspecie(){
         return "Cobra";

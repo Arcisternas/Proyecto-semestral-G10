@@ -2,6 +2,7 @@ package proyecto.codigoInterno.Animales.Desierto;
 
 
 import java.util.concurrent.*;
+import javax.swing.ImageIcon;
 
 import proyecto.codigoInterno.Alimento.Carnivoro;
 import proyecto.codigoInterno.Animales.Animal;
@@ -16,6 +17,7 @@ public class ZorroFennec extends Animal implements Carnivoro{
     public ZorroFennec(String nombre){
         super(nombre);
         this.come = false;
+        imagenIcon = new ImageIcon(getClass().getResource("/animales/Desierto/fennec.png"));
     }
     public String getEspecie(){
         return "Zorro Fennec";

@@ -1,6 +1,7 @@
 package proyecto.codigoInterno.Animales.Bosque;
 
 import java.util.concurrent.*;
+import javax.swing.ImageIcon;
 
 import proyecto.codigoInterno.Alimento.Carnivoro;
 import proyecto.codigoInterno.Animales.Animal;
@@ -15,6 +16,7 @@ public class Buho extends Animal implements Carnivoro{
     public Buho(String nombre){
         super(nombre);
         this.come = false;
+        imagenIcon = new ImageIcon(getClass().getResource("/animales/Bosque/buho.png"));
     }
     public String getEspecie(){
         return "Buho";

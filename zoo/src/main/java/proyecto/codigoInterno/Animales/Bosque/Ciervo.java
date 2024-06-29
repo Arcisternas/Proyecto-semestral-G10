@@ -2,6 +2,7 @@ package proyecto.codigoInterno.Animales.Bosque;
 
 
 import java.util.concurrent.*;
+import javax.swing.ImageIcon;
 
 import proyecto.codigoInterno.Alimento.Herbivoro;
 import proyecto.codigoInterno.Animales.Animal;
@@ -17,6 +18,7 @@ public class Ciervo extends Animal implements Herbivoro{
     public Ciervo(String nombre){
         super(nombre);
         this.come = false;
+        imagenIcon = new ImageIcon(getClass().getResource("/animales/Bosque/ciervo.png"));
     }
     public String getEspecie(){
         return "Ciervo";

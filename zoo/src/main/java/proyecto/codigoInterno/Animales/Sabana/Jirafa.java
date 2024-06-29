@@ -2,6 +2,7 @@ package proyecto.codigoInterno.Animales.Sabana;
 
 
 import java.util.concurrent.*;
+import javax.swing.ImageIcon;
 
 import proyecto.codigoInterno.Alimento.Herbivoro;
 import proyecto.codigoInterno.Animales.Animal;
@@ -17,6 +18,7 @@ public class Jirafa extends Animal implements Herbivoro{
     public Jirafa(String nombre){
         super(nombre);
         this.come = false;
+        imagenIcon = new ImageIcon(getClass().getResource("/animales/Sabana/jirafa.png"));
     }
     public String getEspecie(){
         return "Jirafa";

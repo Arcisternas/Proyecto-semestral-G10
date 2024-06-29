@@ -2,6 +2,7 @@ package proyecto.codigoInterno.Animales.Desierto;
 
 
 import java.util.concurrent.*;
+import javax.swing.ImageIcon;
 
 import proyecto.codigoInterno.Alimento.Herbivoro;
 import proyecto.codigoInterno.Animales.Animal;
@@ -17,6 +18,7 @@ public class Camello extends Animal implements Herbivoro{
     public Camello(String nombre){
         super(nombre);
         this.come = false;
+        imagenIcon = new ImageIcon(getClass().getResource("/animales/Desierto/camello.png"));
     }
     public String getEspecie(){
         return "Camello";

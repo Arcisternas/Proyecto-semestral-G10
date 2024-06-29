@@ -1,6 +1,7 @@
 package proyecto.codigoInterno.Animales.Sabana;
 
 import java.util.concurrent.*;
+import javax.swing.ImageIcon;
 
 import proyecto.codigoInterno.Alimento.Herbivoro;
 import proyecto.codigoInterno.Animales.Animal;
@@ -16,6 +17,7 @@ public class Cebra extends Animal implements Herbivoro{
     public Cebra(String nombre){
         super(nombre);
         this.come = false;
+        imagenIcon = new ImageIcon(getClass().getResource("/animales/Sabana/cebra.png"));
     }
     public String getEspecie(){
         return "Cebra";

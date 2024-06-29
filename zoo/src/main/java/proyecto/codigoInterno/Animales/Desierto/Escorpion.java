@@ -2,6 +2,7 @@ package proyecto.codigoInterno.Animales.Desierto;
 
 
 import java.util.concurrent.*;
+import javax.swing.ImageIcon;
 
 import proyecto.codigoInterno.Alimento.Carnivoro;
 import proyecto.codigoInterno.Animales.Animal;
@@ -16,6 +17,7 @@ public class Escorpion extends Animal implements Carnivoro{
     public Escorpion(String nombre){
         super(nombre);
         this.come = false;
+        imagenIcon = new ImageIcon(getClass().getResource("/animales/Desierto/escorpion.png"));
     }
     public String getEspecie(){
         return "Escorpión";

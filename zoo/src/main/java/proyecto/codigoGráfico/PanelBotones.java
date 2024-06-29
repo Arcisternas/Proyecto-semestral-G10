@@ -11,6 +11,7 @@ public class PanelBotones extends JPanel {
     public PanelBotones(Ventana ventana) {
         super();
         setLayout(new GridLayout(1, 3));
+        setSize(1000,25);
         JButton botonHabitats = new JButton("Lista de Habitats");
         JButton botonAnimales = new JButton("Lista de Animales");
         JButton boton3 = new JButton("Alimentar");

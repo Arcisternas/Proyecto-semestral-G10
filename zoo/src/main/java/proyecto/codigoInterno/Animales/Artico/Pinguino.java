@@ -1,6 +1,7 @@
 package proyecto.codigoInterno.Animales.Artico;
 
 import java.util.concurrent.*;
+import javax.swing.ImageIcon;
 
 import proyecto.codigoInterno.Alimento.Carnivoro;
 import proyecto.codigoInterno.Animales.Animal;
@@ -15,6 +16,7 @@ public class Pinguino extends Animal implements Carnivoro{
     public Pinguino(String nombre){
         super(nombre);
         this.come = false;
+        imagenIcon = new ImageIcon(getClass().getResource("/animales/Artico/pinguino.png"));
     }
     public String getEspecie(){
         return "Pingüino";

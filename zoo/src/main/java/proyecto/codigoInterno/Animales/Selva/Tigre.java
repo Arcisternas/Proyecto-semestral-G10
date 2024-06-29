@@ -2,6 +2,7 @@ package proyecto.codigoInterno.Animales.Selva;
 
 
 import java.util.concurrent.*;
+import javax.swing.ImageIcon;
 
 import proyecto.codigoInterno.Alimento.Carnivoro;
 import proyecto.codigoInterno.Animales.Animal;
@@ -17,6 +18,7 @@ public class Tigre extends Animal implements Carnivoro{
     public Tigre(String nombre){
         super(nombre);
         this.come = false;
+        imagenIcon = new ImageIcon(getClass().getResource("/animales/Selva/tigre.png"));
     }
     public String getEspecie(){
         return "Tigre";

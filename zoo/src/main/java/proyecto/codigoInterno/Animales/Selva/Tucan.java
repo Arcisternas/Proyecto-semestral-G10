@@ -1,6 +1,7 @@
 package proyecto.codigoInterno.Animales.Selva;
 
 import java.util.concurrent.*;
+import javax.swing.ImageIcon;
 
 import proyecto.codigoInterno.Alimento.Herbivoro;
 import proyecto.codigoInterno.Animales.Animal;
@@ -16,6 +17,7 @@ public class Tucan extends Animal  implements Herbivoro{
     public Tucan(String nombre){
         super(nombre);
         this.come = false;
+        imagenIcon = new ImageIcon(getClass().getResource("/animales/Selva/tucan.png"));    
     }
     public String getEspecie(){
         return "Tucán";
