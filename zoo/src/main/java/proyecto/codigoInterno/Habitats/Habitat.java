@@ -40,11 +40,11 @@ public abstract class Habitat {
         tipoAnimales.add(tipo);
         animal.pedirComida(zoo.getHabitatActual());
         imagenesAnimales.add(animal.getImagenIcon());
+        PanelHabitat.getInstance().añadirImagenAnimalPanel(animal.getImagenIcon());
         }
         else{
             System.out.println("No se puede agregar este animal al habitat");
         }
-        PanelHabitat.getInstance().actualizarimagen();
     }
     public void addImagenAnimal(ImageIcon imagen){
         imagenesAnimales.add(imagen);

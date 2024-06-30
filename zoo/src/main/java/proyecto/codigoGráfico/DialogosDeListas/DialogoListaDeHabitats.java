@@ -36,7 +36,7 @@ public class DialogoListaDeHabitats extends DialogoListaBase {
     private void irHabitat(Habitat habitat) {
         JOptionPane.showMessageDialog(this, "Yendo al hábitat: " + habitat.getNombre());
         Zoologico.getInstance().setHabitatActual(habitat);
-        PanelHabitat.getInstance().actualizarimagen();
+        PanelHabitat.getInstance().actualizarImagenesPanel();
         this.dispose();
     }
 }

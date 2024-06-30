@@ -3,6 +3,7 @@ package proyecto.codigoGráfico;
 import javax.swing.*;
 
 import proyecto.codigoInterno.Zoologico;
+import proyecto.codigoInterno.Animales.Animal;
 
 import java.awt.*;
 import java.util.Random;
@@ -20,7 +21,11 @@ public class PanelHabitat extends JPanel { //Utilice patron singleton, ya que so
     public static PanelHabitat getInstance() {
         return instance;
     }
-    public void actualizarimagen(){ //pendiente: Actualizar imagen fondo e imagen animal por separado
+    public void actualizarImagenesPanel(){
+        actualizarFondoPanel();
+        actualizarAnimalesPanel();
+    }
+    public void actualizarFondoPanel(){
         String tipo;
         if (zoo.getHabitatActual() == null) {
             tipo =  "intro";
@@ -59,7 +64,6 @@ public class PanelHabitat extends JPanel { //Utilice patron singleton, ya que so
                 break;
         }
         if (habitatImg == null || habitatImg.getImage() == null) {System.out.println("Error cargando imagen");} //Probando si carga la imagen
-        actualizarAnimalesPanel();   
     }
     public void actualizarAnimalesPanel(){
         removeAll();
@@ -77,12 +81,23 @@ public class PanelHabitat extends JPanel { //Utilice patron singleton, ya que so
             }
         }
     }
+    public void añadirImagenAnimalPanel(ImageIcon imagen){
+        int imageWidth = imagen.getIconWidth()/15;
+        int imageHeight = imagen.getIconHeight()/15;
+        Random rand = new Random();
+        int x = rand.nextInt(PanelHabitat.getInstance().getWidth()-imageWidth);
+        int y = rand.nextInt(PanelHabitat.getInstance().getHeight()-imageHeight);
+        JLabel animalLabel = new JLabel();
+        animalLabel.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(imageWidth, imageHeight, Image.SCALE_SMOOTH)));
+        animalLabel.setBounds(x, y, imageWidth, imageHeight);
+        add(animalLabel);
+        repaint();
+    }
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (habitatImg != null && habitatImg.getImage() != null) {
-            Image imagen = new ImageIcon(habitatImg.getImage().getScaledInstance(1000, 900, Image.SCALE_SMOOTH)).getImage();
-            g.drawImage(imagen, 0, 0, 1000, 900, this);
+            g.drawImage(habitatImg.getImage(), 0, 0, 1000, 900, this);
     }
 }
 }

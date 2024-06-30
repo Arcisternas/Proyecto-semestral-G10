@@ -22,7 +22,7 @@ public class Zoologico {
         if(habitats.size() == 1){
             habitatActual = habitats.get(0);
         }
-        PanelHabitat.getInstance().actualizarimagen();
+        PanelHabitat.getInstance().actualizarFondoPanel();
         nombreHabitats.add(nombre);
     }
     public List<Habitat> getHabitats(){

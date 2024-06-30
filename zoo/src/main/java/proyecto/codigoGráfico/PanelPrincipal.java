@@ -16,7 +16,7 @@ public class PanelPrincipal extends JPanel{
         PanelHabitat panelHabitat = PanelHabitat.getInstance();
         PanelBotones panelBotones = new PanelBotones(ventana);
         zoo.setHabitatActual(zoo.getHabitatActual()); //En caso de que se inicialice en zoo con un hábitat ya existente
-        panelHabitat.actualizarimagen();
+        panelHabitat.actualizarImagenesPanel();
         add(panelHabitat, BorderLayout.CENTER);
         add(panelBotones, BorderLayout.SOUTH);
     }
