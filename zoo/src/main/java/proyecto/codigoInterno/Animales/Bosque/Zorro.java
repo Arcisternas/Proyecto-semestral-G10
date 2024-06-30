@@ -41,10 +41,6 @@ public class Zorro extends Animal implements Carnivoro{
         return "Necesita carne...";
     }
     @Override
-    public void desaparecer(Habitat habitat){
-        habitat.eliminarAnimal(this);
-    }
-    @Override
     public void pedirComida(Habitat habitat) {
         this.habitat = habitat;
        pedirCarne();

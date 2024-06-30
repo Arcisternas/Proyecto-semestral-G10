@@ -24,7 +24,6 @@ public class Pinguino extends Animal implements Carnivoro{
     public String getHabitat(){
         return "Artico";
     }
-    
     @Override
     public boolean comerCarne(boolean come) {
         this.come = come;
@@ -41,13 +40,9 @@ public class Pinguino extends Animal implements Carnivoro{
         return "Necesita carne...";
     }
     @Override
-    public void desaparecer(Habitat habitat){
-        habitat.eliminarAnimal(this);
-    }
-    @Override
     public void pedirComida(Habitat habitat) {
         this.habitat = habitat;
-       pedirCarne();
+        pedirCarne();
     }
     public void comer() {
         comerCarne(come);

@@ -18,6 +18,9 @@ public abstract class Animal {
     public abstract String getEspecie();
     public abstract String getHabitat();
     public abstract void pedirComida(Habitat habitat);
-    public abstract void desaparecer(Habitat habitat);
+    public void desaparecer(Habitat habitat){
+        habitat.eliminarAnimal(this);
+        habitat.eliminarImagenAnimal(this.getImagenIcon());
+    }
     public abstract void comer();
 }

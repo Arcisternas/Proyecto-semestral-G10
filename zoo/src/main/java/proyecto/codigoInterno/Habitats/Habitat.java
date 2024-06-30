@@ -49,6 +49,9 @@ public abstract class Habitat {
     public void addImagenAnimal(ImageIcon imagen){
         imagenesAnimales.add(imagen);
     }
+    public void eliminarImagenAnimal(ImageIcon imagen){
+        imagenesAnimales.remove(imagen);
+    }
     public void alimentarAnimales() {
         for (Animal animal : animales) {
             animal.comer();  // Alimentar a cada animal en el hábitat

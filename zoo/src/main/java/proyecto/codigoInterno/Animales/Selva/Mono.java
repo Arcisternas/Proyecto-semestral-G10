@@ -43,10 +43,6 @@ public class Mono extends Animal implements Herbivoro{
         return "Necesita Plantas...";
     }
     @Override
-    public void desaparecer(Habitat habitat){
-        habitat.eliminarAnimal(this);
-    }
-    @Override
     public void pedirComida(Habitat habitat) {
     this.habitat = habitat;
        pedirPlanta();
