@@ -14,8 +14,8 @@ public class Tucan extends Animal  implements Herbivoro{
     private Habitat habitat;
   
 
-    public Tucan(String nombre){
-        super(nombre);
+    public Tucan(String nombre, int id){
+        super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Selva/tucan.png"));    
     }

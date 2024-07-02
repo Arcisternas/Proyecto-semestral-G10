@@ -1,17 +1,23 @@
 package proyecto.codigoInterno.Animales;
 
+import proyecto.codigoGráfico.PanelHabitat;
 import proyecto.codigoInterno.Habitats.Habitat;
 import javax.swing.ImageIcon;
 
 public abstract class Animal {
     private String nombre;
+    private int id;
     protected ImageIcon imagenIcon;
     private Habitat habitatActualAnimal;
-    public Animal(String nombre){
+    public Animal(String nombre, int id){
         this.nombre = nombre;
+        this.id = id;
     }
     public String getNombre(){
         return nombre;
+    }
+    public int getId(){
+        return id;
     }
     public ImageIcon getImagenIcon(){
         return imagenIcon;
@@ -24,7 +30,7 @@ public abstract class Animal {
     }
     public void desaparecer(Habitat habitat){
         habitat.eliminarAnimal(this);
-        habitat.eliminarImagenAnimal(this.getImagenIcon());
+        PanelHabitat.getInstance().eliminarAnimalLabelPanel(this);
     }
     public abstract String getEspecie();
     public abstract String getHabitat();

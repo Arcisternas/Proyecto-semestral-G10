@@ -13,8 +13,8 @@ public class Zorro extends Animal implements Carnivoro{
     private boolean come;
    private Habitat habitat;
 
-    public Zorro(String nombre){
-        super(nombre);
+    public Zorro(String nombre, int id){
+        super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Bosque/zorro.png"));
     }

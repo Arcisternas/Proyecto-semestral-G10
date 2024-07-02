@@ -15,8 +15,8 @@ public class Serpiente extends Animal implements Carnivoro{
     private Habitat habitat;
     
     
-    public Serpiente(String nombre){
-        super(nombre);
+    public Serpiente(String nombre, int id){
+        super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Selva/serpiente.png"));
     }

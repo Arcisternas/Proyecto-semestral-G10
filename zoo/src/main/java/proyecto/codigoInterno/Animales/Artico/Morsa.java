@@ -14,8 +14,8 @@ public class Morsa extends Animal implements Carnivoro{
     private boolean come;
     private Habitat habitat;
 
-    public Morsa(String nombre){
-        super(nombre);
+    public Morsa(String nombre, int id){
+        super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Artico/morsa.png"));
     }

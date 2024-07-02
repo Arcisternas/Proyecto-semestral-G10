@@ -15,8 +15,8 @@ public class Ciervo extends Animal implements Herbivoro{
     private Habitat habitat;
    
 
-    public Ciervo(String nombre){
-        super(nombre);
+    public Ciervo(String nombre, int id){
+        super(nombre,id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Bosque/ciervo.png"));
     }

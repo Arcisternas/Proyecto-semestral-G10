@@ -13,8 +13,8 @@ public class Foca extends Animal implements Carnivoro{
     private boolean come;
     private Habitat habitat;
 
-    public Foca(String nombre){
-        super(nombre);
+    public Foca(String nombre, int id){
+        super(nombre,id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Artico/foca.png"));
     }

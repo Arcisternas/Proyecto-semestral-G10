@@ -10,9 +10,11 @@ public class Zoologico {
     private List<Habitat> habitats;
     private List<String> nombreHabitats;
     private Habitat habitatActual;
+    private int animalId;
     private Zoologico() {
         habitats = new ArrayList<>();
         nombreHabitats = new ArrayList<>();
+        animalId = 0;
      }
     public static Zoologico getInstance() {
         return instance;
@@ -36,5 +38,11 @@ public class Zoologico {
     }
     public Habitat getHabitatActual() {
         return habitatActual;
+    }
+    public int getAnimalId(){
+        return animalId;
+    }
+    public void aumentarAnimalId(){
+        animalId++;
     }
 }

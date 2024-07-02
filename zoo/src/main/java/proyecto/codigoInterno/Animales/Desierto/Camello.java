@@ -15,8 +15,8 @@ public class Camello extends Animal implements Herbivoro{
     private Habitat habitat;
     
 
-    public Camello(String nombre){
-        super(nombre);
+    public Camello(String nombre, int id){
+        super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Desierto/camello.png"));
     }

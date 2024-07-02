@@ -13,8 +13,8 @@ public class Pinguino extends Animal implements Carnivoro{
     private boolean come;
     private Habitat habitat;
     
-    public Pinguino(String nombre){
-        super(nombre);
+    public Pinguino(String nombre, int id){
+        super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Artico/pinguino.png"));
     }

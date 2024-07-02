@@ -13,8 +13,8 @@ public class OsoPolar extends Animal implements Carnivoro{
     private boolean come;
     private Habitat habitat;
     
-    public OsoPolar(String nombre){
-        super(nombre);
+    public OsoPolar(String nombre, int id){
+        super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Artico/polar.png"));
     }

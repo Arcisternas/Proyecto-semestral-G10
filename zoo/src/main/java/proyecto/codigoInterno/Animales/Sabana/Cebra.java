@@ -14,8 +14,8 @@ public class Cebra extends Animal implements Herbivoro{
     private Habitat habitat;
     
 
-    public Cebra(String nombre){
-        super(nombre);
+    public Cebra(String nombre, int id){
+        super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Sabana/cebra.png"));
     }

@@ -15,8 +15,8 @@ public class Leon extends Animal implements Carnivoro{
     private Habitat habitat;
     
     
-    public Leon(String nombre){
-        super(nombre);
+    public Leon(String nombre, int id){
+        super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Sabana/leon.png"));
     }

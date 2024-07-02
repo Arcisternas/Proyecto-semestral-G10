@@ -14,8 +14,8 @@ public class Elefante extends Animal implements Herbivoro{
     private Habitat habitat;
    
 
-    public Elefante(String nombre){
-        super(nombre);
+    public Elefante(String nombre, int id){
+        super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Sabana/elefante.png"));
     }

@@ -15,8 +15,8 @@ public class Jirafa extends Animal implements Herbivoro{
     private Habitat habitat;
   
 
-    public Jirafa(String nombre){
-        super(nombre);
+    public Jirafa(String nombre, int id){
+        super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Sabana/jirafa.png"));
     }

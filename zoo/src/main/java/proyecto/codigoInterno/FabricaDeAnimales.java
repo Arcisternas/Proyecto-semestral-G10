@@ -9,48 +9,48 @@ import proyecto.codigoInterno.Animales.Animal;
 
 
 public class FabricaDeAnimales {
-    public static Animal crearAnimal(String nombre, String tipoAnimal) {
+    public static Animal crearAnimal(String nombre, int id, String tipoAnimal) {
         switch (tipoAnimal) {
             case "Foca":
-                return new Foca(nombre);
+                return new Foca(nombre,id);
             case "Morsa":
-                return new Morsa(nombre);
+                return new Morsa(nombre,id);
             case "Oso Polar":
-                return new OsoPolar(nombre);
+                return new OsoPolar(nombre,id);
             case "Pingüino":
-                return new Pinguino(nombre);
+                return new Pinguino(nombre,id);
             case "Buho":
-                return new Buho(nombre);
+                return new Buho(nombre,id);
             case "Ciervo":
-                return new Ciervo(nombre);
+                return new Ciervo(nombre,id);
             case "Lobo":
-                return new Lobo(nombre);
+                return new Lobo(nombre,id);
             case "Zorro":
-                return new Zorro(nombre);
+                return new Zorro(nombre,id);
             case "Camello":
-                return new Camello(nombre);
+                return new Camello(nombre,id);
             case "Escorpión":
-                return new Escorpion(nombre);
+                return new Escorpion(nombre,id);
             case "Cobra":
-                return new Cobra(nombre);
+                return new Cobra(nombre,id);
             case "Zorro Fennec":
-                return new ZorroFennec(nombre);
+                return new ZorroFennec(nombre,id);
             case "Cebra":
-                return new Cebra(nombre);
+                return new Cebra(nombre,id);
             case "Elefante":
-                return new Elefante(nombre);
+                return new Elefante(nombre,id);
             case "Jirafa":
-                return new Jirafa(nombre);
+                return new Jirafa(nombre,id);
             case "León":
-                return new Leon(nombre);
+                return new Leon(nombre,id);
             case "Mono":
-                return new Mono(nombre);
+                return new Mono(nombre,id);
             case "Serpiente":
-                return new Serpiente(nombre);
+                return new Serpiente(nombre,id);
             case "Tigre":
-                return new Tigre(nombre);
+                return new Tigre(nombre,id);
             case "Tucán":
-                return new Tucan(nombre);
+                return new Tucan(nombre,id);
             default:
                 return null;
         }

@@ -14,8 +14,8 @@ public class Mono extends Animal implements Herbivoro{
     private Habitat habitat;
    
 
-    public Mono(String nombre){
-        super(nombre);
+    public Mono(String nombre, int id){
+        super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Selva/mono.png"));
     }

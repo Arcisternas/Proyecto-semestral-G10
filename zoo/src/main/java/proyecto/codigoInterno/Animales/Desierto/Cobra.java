@@ -14,8 +14,8 @@ public class Cobra extends Animal implements Carnivoro{
     private boolean come;
     private Habitat habitat;
     
-    public Cobra(String nombre){
-        super(nombre);
+    public Cobra(String nombre, int id){
+        super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Desierto/cobra.png"));
     }
