@@ -8,12 +8,10 @@ import proyecto.codigoInterno.Habitats.Habitat;
 public class Zoologico {
     private static Zoologico instance = new Zoologico();
     private List<Habitat> habitats;
-    private List<String> nombreHabitats;
     private Habitat habitatActual;
     private int animalId;
     private Zoologico() {
         habitats = new ArrayList<>();
-        nombreHabitats = new ArrayList<>();
         animalId = 0;
      }
     public static Zoologico getInstance() {
@@ -25,13 +23,9 @@ public class Zoologico {
             habitatActual = habitats.get(0);
         }
         PanelHabitat.getInstance().actualizarFondoPanel();
-        nombreHabitats.add(nombre);
     }
     public List<Habitat> getHabitats(){
         return habitats;
-    }
-    public List<String> getNombreHabitats(){
-        return nombreHabitats;
     }
     public void setHabitatActual(Habitat actual) {
         habitatActual = actual;
