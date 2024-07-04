@@ -2,7 +2,7 @@ package proyecto.codigoInterno;
 
 
 import proyecto.codigoInterno.Habitats.*;
-public class FrabricaDeHabitats {
+public class FabricaDeHabitats {
     public static Habitat crearHabitat(String nombre, String tipoHabitat) {
         switch (tipoHabitat) {
             case "Ártico":

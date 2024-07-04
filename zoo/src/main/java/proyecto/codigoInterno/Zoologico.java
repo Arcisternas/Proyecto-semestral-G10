@@ -18,7 +18,7 @@ public class Zoologico {
         return instance;
     }
     public void addHabitat(String nombre, String tipoHabitat) {
-        habitats.add(FrabricaDeHabitats.crearHabitat(nombre, tipoHabitat));
+        habitats.add(FabricaDeHabitats.crearHabitat(nombre, tipoHabitat));
         if(habitats.size() == 1){
             habitatActual = habitats.get(0);
         }
