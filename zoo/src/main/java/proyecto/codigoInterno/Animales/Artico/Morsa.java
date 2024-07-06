@@ -18,12 +18,33 @@ public class Morsa extends Animal implements Carnivoro{
         super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Artico/morsa.png"));
+        animo = 2;
     }
     public String getEspecie(){
         return "Morsa";
     }
     public String getHabitat(){
         return "Artico";
+    }
+    public void calcularAnimoSegunCompañeros(){
+        animo = 2;
+        for(Animal animal : this.getHabitatActualAnimal().getAnimales()){
+            if (animal == this) {
+                continue;
+            }
+            if(animal.getEspecie().equals("Morsa")){
+                animo = animo + 5;
+            }
+            if (animal.getEspecie().equals("Pingüino")) {
+                animo = animo + 0;
+            }
+            if (animal.getEspecie().equals("Oso Polar")) {
+                animo = animo - 3;
+            }
+            if (animal.getEspecie().equals("Foca")) {
+                animo = animo - 2;
+            }
+        }
     }
     @Override
     public boolean comerCarne(boolean come) {

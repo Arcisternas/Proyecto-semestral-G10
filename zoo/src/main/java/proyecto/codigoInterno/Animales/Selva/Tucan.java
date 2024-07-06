@@ -17,7 +17,8 @@ public class Tucan extends Animal  implements Herbivoro{
     public Tucan(String nombre, int id){
         super(nombre, id);
         this.come = false;
-        imagenIcon = new ImageIcon(getClass().getResource("/animales/Selva/tucan.png"));    
+        imagenIcon = new ImageIcon(getClass().getResource("/animales/Selva/tucan.png")); 
+        animo = 0;   
     }
     public String getEspecie(){
         return "Tucán";
@@ -25,7 +26,26 @@ public class Tucan extends Animal  implements Herbivoro{
     public String getHabitat(){
         return "Selva";
     }
-    
+    public void calcularAnimoSegunCompañeros(){
+        animo = 0;
+        for(Animal animal : this.getHabitatActualAnimal().getAnimales()){
+            if (animal == this) {
+                continue;
+            }
+            if(animal.getEspecie().equals("Mono")){
+                animo = animo + 1;
+            }
+            if (animal.getEspecie().equals("Serpiente")) {
+                animo = animo - 2;
+            }
+            if (animal.getEspecie().equals("Tigre")) {
+                animo = animo - 5;
+            }
+            if (animal.getEspecie().equals("Tucán")) {
+                animo = animo + 3;
+            }
+        }
+    }
     @Override
     public boolean comerPlanta(boolean come) {
         this.come = come;

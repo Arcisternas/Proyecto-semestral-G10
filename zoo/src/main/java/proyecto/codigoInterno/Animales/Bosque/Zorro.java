@@ -17,6 +17,7 @@ public class Zorro extends Animal implements Carnivoro{
         super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Bosque/zorro.png"));
+        animo = 5;
     }
     public String getEspecie(){
         return "Zorro";
@@ -24,7 +25,26 @@ public class Zorro extends Animal implements Carnivoro{
     public String getHabitat(){
         return "Bosque";
     }
-    
+    public void calcularAnimoSegunCompañeros(){
+        animo = 5;
+        for(Animal animal : this.getHabitatActualAnimal().getAnimales()){
+            if (animal == this) {
+                continue;
+            }
+            if(animal.getEspecie().equals("Buho")){
+                animo = animo + 1;
+            }
+            if (animal.getEspecie().equals("Ciervo")) {
+                animo = animo - 1;
+            }
+            if (animal.getEspecie().equals("Lobo")) {
+                animo = animo + 0;
+            }
+            if (animal.getEspecie().equals("Zorro")) {
+                animo = animo - 2;
+            }
+        }
+    }
     @Override
     public boolean comerCarne(boolean come) {
         this.come = come;

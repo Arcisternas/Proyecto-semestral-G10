@@ -30,10 +30,14 @@ public abstract class Habitat {
     public void addAnimal(String nombre, String tipo){
         if (animalesPermitidos().contains(tipo)){
         Animal animal = (FabricaDeAnimales.crearAnimal(nombre,zoo.getAnimalId(),tipo));
+        animal.setHabitatActualAnimal(this);
         zoo.aumentarAnimalId();
         animales.add(animal);
-        tipoAnimales.add(tipo);
+        tipoAnimales.add(tipo); //Revisar si se usa en alguna parte
         animal.pedirComida(zoo.getHabitatActual());
+        for (Animal animalEnHabitat : animales) {
+            animalEnHabitat.calcularAnimoSegunCompañeros();
+        }
         PanelHabitat.getInstance().añadirImagenAnimalPanel(animal);
         }
         else{

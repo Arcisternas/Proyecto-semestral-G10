@@ -18,6 +18,7 @@ public class Mono extends Animal implements Herbivoro{
         super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Selva/mono.png"));
+        animo = -5;
     }
     public String getEspecie(){
         return "Mono";
@@ -25,7 +26,26 @@ public class Mono extends Animal implements Herbivoro{
     public String getHabitat(){
         return "Selva";
     }
-   
+    public void calcularAnimoSegunCompañeros(){
+        animo = -5;
+        for(Animal animal : this.getHabitatActualAnimal().getAnimales()){
+            if (animal == this) {
+                continue;
+            }
+            if(animal.getEspecie().equals("Mono")){
+                animo = animo + 5;
+            }
+            if (animal.getEspecie().equals("Serpiente")) {
+                animo = animo - 3;
+            }
+            if (animal.getEspecie().equals("Tigre")) {
+                animo = animo - 5;
+            }
+            if (animal.getEspecie().equals("Tucán")) {
+                animo = animo + 1;
+            }
+        }
+    }
     @Override
     public boolean comerPlanta(boolean come) {
         this.come = come;

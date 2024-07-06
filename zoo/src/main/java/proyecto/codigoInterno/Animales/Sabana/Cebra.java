@@ -18,6 +18,7 @@ public class Cebra extends Animal implements Herbivoro{
         super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Sabana/cebra.png"));
+        animo = -5;
     }
     public String getEspecie(){
         return "Cebra";
@@ -25,7 +26,26 @@ public class Cebra extends Animal implements Herbivoro{
     public String getHabitat(){
         return "Sabana";
     }
-   
+    public void calcularAnimoSegunCompañeros(){
+        animo = -5;
+        for(Animal animal : this.getHabitatActualAnimal().getAnimales()){
+            if (animal == this) {
+                continue;
+            }
+            if(animal.getEspecie().equals("Cebra")){
+                animo = animo + 5;
+            }
+            if (animal.getEspecie().equals("Elefante")) {
+                animo = animo + 1;
+            }
+            if (animal.getEspecie().equals("Jirafa")) {
+                animo = animo + 1;
+            }
+            if (animal.getEspecie().equals("León")) {
+                animo = animo - 5;
+            }
+        }
+    }
     @Override
     public boolean comerPlanta(boolean come) {
         this.come = come;

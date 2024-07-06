@@ -18,6 +18,7 @@ public class Cobra extends Animal implements Carnivoro{
         super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Desierto/cobra.png"));
+        animo = 5;
     }
     public String getEspecie(){
         return "Cobra";
@@ -25,7 +26,26 @@ public class Cobra extends Animal implements Carnivoro{
     public String getHabitat(){
         return "Desierto";
     }
-    
+    public void calcularAnimoSegunCompañeros(){
+        animo = 5;
+        for(Animal animal : this.getHabitatActualAnimal().getAnimales()){
+            if (animal == this) {
+                continue;
+            }
+            if(animal.getEspecie().equals("Camello")){
+                animo = animo - 1;
+            }
+            if (animal.getEspecie().equals("Cobra")) {
+                animo = animo - 3;
+            }
+            if (animal.getEspecie().equals("Escorpión")) {
+                animo = animo + 1;
+            }
+            if (animal.getEspecie().equals("Zorro Fennec")) {
+                animo = animo - 1;
+            }
+        }
+    }
     @Override
     public boolean comerCarne(boolean come) {
         this.come = come;

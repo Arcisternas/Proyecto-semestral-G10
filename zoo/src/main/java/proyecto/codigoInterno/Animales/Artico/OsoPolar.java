@@ -17,6 +17,7 @@ public class OsoPolar extends Animal implements Carnivoro{
         super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Artico/polar.png"));
+        animo = 5;
     }
     public String getEspecie(){
         return "Oso Polar";
@@ -24,7 +25,26 @@ public class OsoPolar extends Animal implements Carnivoro{
     public String getHabitat(){
         return "Artico";
     }
-    
+    public void calcularAnimoSegunCompañeros(){
+        animo = 5;
+        for(Animal animal : this.getHabitatActualAnimal().getAnimales()){
+            if (animal == this) {
+                continue;
+            }
+            if(animal.getEspecie().equals("Oso Polar")){
+                animo = animo + 5;
+            }
+            if (animal.getEspecie().equals("Pingüino")) {
+                animo = animo - 1;
+            }
+            if (animal.getEspecie().equals("Foca")) {
+                animo = animo - 1;
+            }
+            if (animal.getEspecie().equals("Morsa")) {
+                animo = animo - 2;
+            }
+        }
+    }
     @Override
     public boolean comerCarne(boolean come) {
         this.come = come;

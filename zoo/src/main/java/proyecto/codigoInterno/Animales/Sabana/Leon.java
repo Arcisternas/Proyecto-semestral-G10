@@ -19,6 +19,7 @@ public class Leon extends Animal implements Carnivoro{
         super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Sabana/leon.png"));
+        animo = 0;
     }
     public String getEspecie(){
         return "León";
@@ -26,7 +27,26 @@ public class Leon extends Animal implements Carnivoro{
     public String getHabitat(){
         return "Sabana";
     }
-    
+    public void calcularAnimoSegunCompañeros(){
+        animo = 0;
+        for(Animal animal : this.getHabitatActualAnimal().getAnimales()){
+            if (animal == this) {
+                continue;
+            }
+            if(animal.getEspecie().equals("Cebra")){
+                animo = animo - 1;
+            }
+            if (animal.getEspecie().equals("Elefante")) {
+                animo = animo + 0;
+            }
+            if (animal.getEspecie().equals("Jirafa")) {
+                animo = animo - 1;
+            }
+            if (animal.getEspecie().equals("León")) {
+                animo = animo + 3;
+            }
+        }
+    }
     @Override
     public boolean comerCarne(boolean come) {
         this.come = come;

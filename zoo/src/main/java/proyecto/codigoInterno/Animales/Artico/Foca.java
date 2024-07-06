@@ -17,12 +17,33 @@ public class Foca extends Animal implements Carnivoro{
         super(nombre,id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Artico/foca.png"));
+        animo = 0;
     }
     public String getEspecie(){
         return "Foca";
     }
     public String getHabitat(){
         return "Artico";
+    }
+    public void calcularAnimoSegunCompañeros(){
+        animo = 0;
+        for(Animal animal : this.getHabitatActualAnimal().getAnimales()){
+            if (animal == this) {
+                continue;
+            }
+            if(animal.getEspecie().equals("Foca")){
+                animo = animo + 3;
+            }
+            if (animal.getEspecie().equals("Pingüino")) {
+                animo = animo + 1;
+            }
+            if (animal.getEspecie().equals("Oso Polar")) {
+                animo = animo - 5;
+            }
+            if (animal.getEspecie().equals("Morsa")) {
+                animo = animo - 2;
+            }
+        }
     }
     @Override
     public boolean comerCarne(boolean come) {

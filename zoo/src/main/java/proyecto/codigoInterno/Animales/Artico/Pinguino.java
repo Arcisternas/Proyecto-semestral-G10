@@ -17,12 +17,33 @@ public class Pinguino extends Animal implements Carnivoro{
         super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Artico/pinguino.png"));
+        animo = -2;
     }
     public String getEspecie(){
         return "Pingüino";
     }
     public String getHabitat(){
         return "Artico";
+    }
+    public void calcularAnimoSegunCompañeros(){
+        animo = -2;
+        for(Animal animal : this.getHabitatActualAnimal().getAnimales()){
+            if (animal == this) {
+                continue;
+            }
+            if(animal.getEspecie().equals("Pingüino")){
+                animo = animo + 3;
+            }
+            if (animal.getEspecie().equals("Foca")) {
+                animo = animo + 1;
+            }
+            if (animal.getEspecie().equals("Oso Polar")) {
+                animo = animo - 5;
+            }
+            if (animal.getEspecie().equals("Morsa")) {
+                animo = animo - 2;
+            }
+        }
     }
     @Override
     public boolean comerCarne(boolean come) {

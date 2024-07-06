@@ -17,6 +17,7 @@ public class Lobo extends Animal implements Carnivoro{
         super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Bosque/lobo.png"));
+        animo = -3;
     }
     public String getEspecie(){
         return "Lobo";
@@ -24,7 +25,26 @@ public class Lobo extends Animal implements Carnivoro{
     public String getHabitat(){
         return "Bosque";
     }
-    
+    public void calcularAnimoSegunCompañeros(){
+        animo = -3;
+        for(Animal animal : this.getHabitatActualAnimal().getAnimales()){
+            if (animal == this) {
+                continue;
+            }
+            if(animal.getEspecie().equals("Buho")){
+                animo = animo - 2 ;
+            }
+            if (animal.getEspecie().equals("Ciervo")) {
+                animo = animo - 3;
+            }
+            if (animal.getEspecie().equals("Lobo")) {
+                animo = animo + 5;
+            }
+            if (animal.getEspecie().equals("Zorro")) {
+                animo = animo + 0;
+            }
+        }
+    }
     @Override
     public boolean comerCarne(boolean come) {
         this.come = come;

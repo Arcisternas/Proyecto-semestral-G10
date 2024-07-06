@@ -19,6 +19,7 @@ public class Serpiente extends Animal implements Carnivoro{
         super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Selva/serpiente.png"));
+        animo = 5;
     }
     public String getEspecie(){
         return "Serpiente";
@@ -26,7 +27,26 @@ public class Serpiente extends Animal implements Carnivoro{
     public String getHabitat(){
         return "Selva";
     }
-    
+    public void calcularAnimoSegunCompañeros(){
+        animo = 5;
+        for(Animal animal : this.getHabitatActualAnimal().getAnimales()){
+            if (animal == this) {
+                continue;
+            }
+            if(animal.getEspecie().equals("Mono")){
+                animo = animo + 0;
+            }
+            if (animal.getEspecie().equals("Serpiente")) {
+                animo = animo - 3;
+            }
+            if (animal.getEspecie().equals("Tigre")) {
+                animo = animo + 1;
+            }
+            if (animal.getEspecie().equals("Tucán")) {
+                animo = animo + 0;
+            }
+        }
+    }
     @Override
     public boolean comerCarne(boolean come) {
         this.come = come;
