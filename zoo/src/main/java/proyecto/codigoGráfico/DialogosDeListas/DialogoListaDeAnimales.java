@@ -27,10 +27,16 @@ public class DialogoListaDeAnimales extends DialogoListaBase {
         panelscroll.removeAll();
         if (habitat != null) {
             for (Animal animal : habitat.getAnimales()) {
-                PanelListaDeAnimales panel = new PanelListaDeAnimales(animal);
+                PanelListaDeAnimales panel = new PanelListaDeAnimales(animal, e -> sacarAnimal(animal));
                 panelscroll.add(panel);
             }
         }
         this.revalidate();
+    }
+    private void sacarAnimal(Animal animal) {
+        JOptionPane.showMessageDialog(this, "Sacando al animal: " + animal.getNombre() + " (" + animal.getEspecie() + ")");
+        animal.desaparecer(animal.getHabitatActualAnimal());
+        actualizarPanelScroll();
+        this.dispose();
     }
 }

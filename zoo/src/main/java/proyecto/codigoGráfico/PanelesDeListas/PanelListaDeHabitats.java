@@ -24,7 +24,4 @@ public class PanelListaDeHabitats extends JPanel{
         add(etiquetaHabitat, BorderLayout.CENTER);
         add(ir, BorderLayout.EAST);
     }
-    public JButton getBotonIr() {
-        return ir;
-    }
 }
