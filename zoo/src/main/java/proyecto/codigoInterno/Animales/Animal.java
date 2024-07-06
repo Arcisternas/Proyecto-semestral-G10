@@ -34,6 +34,7 @@ public abstract class Animal {
     }
     public void desaparecer(Habitat habitat){
         habitat.eliminarAnimal(this);
+        habitat.actualizarAnimoAnimales();
         PanelHabitat.getInstance().eliminarAnimalLabelPanel(this);
     }
     public abstract String getEspecie();

@@ -35,13 +35,16 @@ public abstract class Habitat {
         animales.add(animal);
         tipoAnimales.add(tipo); //Revisar si se usa en alguna parte
         animal.pedirComida(zoo.getHabitatActual());
-        for (Animal animalEnHabitat : animales) {
-            animalEnHabitat.calcularAnimoSegunCompañeros();
-        }
+        actualizarAnimoAnimales();
         PanelHabitat.getInstance().añadirImagenAnimalPanel(animal);
         }
         else{
             System.out.println("No se puede agregar este animal al habitat");
+        }
+    }
+    public void actualizarAnimoAnimales(){
+        for (Animal animal : animales) {
+            animal.calcularAnimoSegunCompañeros();
         }
     }
     public void alimentarAnimales() {
