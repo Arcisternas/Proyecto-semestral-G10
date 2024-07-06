@@ -17,6 +17,7 @@ public class PanelHabitat extends JPanel { //Utilice patron singleton, ya que so
     private Zoologico zoo = Zoologico.getInstance();
     private List<animalLabel> animalesLabels = new ArrayList<>();
     private Timer timer;
+    private JLabel popularidadLabel;
     private PanelHabitat() {
         super();
         setLayout(null);
@@ -30,6 +31,7 @@ public class PanelHabitat extends JPanel { //Utilice patron singleton, ya que so
             }
         });
         timer.start();
+        popularidadLabel = new JLabel();
     }
     public static PanelHabitat getInstance() {
         return instance;
@@ -37,6 +39,7 @@ public class PanelHabitat extends JPanel { //Utilice patron singleton, ya que so
     public void actualizarImagenesPanel(){
         actualizarFondoPanel();
         actualizarAnimalesPanel();
+        actualizarPopularidadLabel();
     }
     public void actualizarFondoPanel(){
         String tipo;
@@ -77,6 +80,7 @@ public class PanelHabitat extends JPanel { //Utilice patron singleton, ya que so
                 break;
         }
         if (habitatImg == null || habitatImg.getImage() == null) {System.out.println("Error cargando imagen");} //Probando si carga la imagen
+
     }
     public void actualizarAnimalesPanel(){
         removeAll();
@@ -85,6 +89,14 @@ public class PanelHabitat extends JPanel { //Utilice patron singleton, ya que so
                 añadirImagenAnimalPanel(animal);
             }
         }
+        repaint();
+    }
+    public void actualizarPopularidadLabel(){
+        remove(popularidadLabel);
+        popularidadLabel.setText("Popularidad: " + zoo.getPopularidad());
+        popularidadLabel.setBounds(10, 10,200,10);
+        add(popularidadLabel);
+        repaint();
     }
     public void añadirImagenAnimalPanel(Animal animal){
         ImageIcon imagen = animal.getImagenIcon();
@@ -118,6 +130,7 @@ public class PanelHabitat extends JPanel { //Utilice patron singleton, ya que so
                 break;
             }
         }
+        actualizarAnimalesPanel();
     }
     @Override
     protected void paintComponent(Graphics g) {

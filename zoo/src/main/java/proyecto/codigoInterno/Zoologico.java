@@ -4,12 +4,14 @@ import java.util.*;
 
 import proyecto.codigoGráfico.PanelHabitat;
 import proyecto.codigoInterno.Habitats.Habitat;
-//Nota: El profesor dijo que quizá no sea necesario implementar el patrón Singleton en esta clase
+import proyecto.codigoInterno.Animales.Animal;
+
 public class Zoologico {
     private static Zoologico instance = new Zoologico();
     private List<Habitat> habitats;
     private Habitat habitatActual;
     private int animalId;
+    private int popularidad;
     private Zoologico() {
         habitats = new ArrayList<>();
         animalId = 0;
@@ -22,6 +24,7 @@ public class Zoologico {
         if(habitats.size() == 1){
             habitatActual = habitats.get(0);
         }
+        actualizarPopularidad();
         PanelHabitat.getInstance().actualizarFondoPanel();
     }
     public List<Habitat> getHabitats(){
@@ -38,5 +41,18 @@ public class Zoologico {
     }
     public void aumentarAnimalId(){
         animalId++;
+    }
+    public int getPopularidad(){
+        return popularidad;
+    }
+    public void actualizarPopularidad(){
+        popularidad = 0;
+        for (Habitat habitat : habitats) {
+            for (Animal animal : habitat.getAnimales()) {
+                popularidad += animal.getAnimo();
+            }
+            popularidad += 5;
+        }
+        PanelHabitat.getInstance().actualizarPopularidadLabel();
     }
 }
