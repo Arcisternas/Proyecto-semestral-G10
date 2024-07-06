@@ -46,6 +46,8 @@ public abstract class Habitat {
         for (Animal animal : animales) {
             animal.calcularAnimoSegunCompañeros();
         }
+        zoo.actualizarPopularidad();
+        PanelHabitat.getInstance().actualizarPopularidadLabel();
     }
     public void alimentarAnimales() {
         for (Animal animal : animales) {
