@@ -1,24 +1,27 @@
 package proyecto.codigoGráfico.DialogosDeListas;
 
 import javax.swing.*;
+import java.awt.*;
 
 import proyecto.codigoInterno.Habitats.Habitat;
 import proyecto.codigoInterno.Zoologico;
 import proyecto.codigoInterno.Animales.Animal;
-import proyecto.codigoGráfico.DialogosDeEleccion.DialogoEleccionTipoAnimal;
 import proyecto.codigoGráfico.PanelesDeListas.PanelListaAlimentar;
-import proyecto.codigoGráfico.PanelesDeListas.PanelListaDeAnimales;
 
 public class DialogoListaAlimentar extends DialogoListaBase {
     private Habitat habitat;
+    private JButton segundoBoton;
 
     public DialogoListaAlimentar(JFrame ventana) {
-        super(ventana, "Lista de Animales a Alimentar", "Alimentar a todos");
+        super(ventana, "Lista de Animales a Alimentar", "Botón de la izquierda");
         habitat = Zoologico.getInstance().getHabitatActual();
+        segundoBoton = new JButton("Botón de la derecha");
+        panelBoton.add(segundoBoton,BorderLayout.EAST);
         actualizarPanelScroll();
     }
     @Override
     protected void accionBotonPrincipal(JFrame ventana) {
+        //boton de la izquierda
         habitat.alimentarAnimales();
         actualizarPanelScroll();
     }
@@ -32,6 +35,9 @@ public class DialogoListaAlimentar extends DialogoListaBase {
             }
         }
         this.revalidate();
+    }
+    private void accionSegundoBoton(JFrame ventana){
+        //Aqui pones lo que hace el boton de la derecha
     }
     private void Alimentar(Animal animal) {
         JOptionPane.showMessageDialog(this, "Alimentando al animal: " + animal.getNombre() + " (" + animal.getEspecie() + ")");
