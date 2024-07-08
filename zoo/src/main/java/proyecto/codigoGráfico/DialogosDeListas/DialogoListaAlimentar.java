@@ -30,7 +30,6 @@ public class DialogoListaAlimentar extends DialogoListaBase {
     }
     @Override
     protected void accionBotonPrincipal(JFrame ventana) {
-        //boton de la izquierda
         plantas++;
         suficientePlanta = true;
         habitat.alimentarAnimales();
@@ -51,7 +50,6 @@ public class DialogoListaAlimentar extends DialogoListaBase {
         carne++;
         suficienteCarne = true;
         actualizarPanelScroll();
-        //Aqui pones lo que hace el boton de la derecha
     }
     private void Alimentar(Animal animal) {
         if(suficientePlanta || suficienteCarne){

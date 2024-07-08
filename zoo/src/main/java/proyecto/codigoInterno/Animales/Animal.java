@@ -7,8 +7,8 @@ import javax.swing.ImageIcon;
 public abstract class Animal {
     private String nombre;
     private int id;
-    protected ImageIcon imagenIcon;
     private Habitat habitatActualAnimal;
+    protected ImageIcon imagenIcon;
     protected int animo; 
     public Animal(String nombre, int id){
         this.nombre = nombre;

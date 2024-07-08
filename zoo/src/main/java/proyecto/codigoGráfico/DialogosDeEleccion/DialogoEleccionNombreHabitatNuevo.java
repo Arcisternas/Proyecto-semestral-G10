@@ -1,26 +1,17 @@
 package proyecto.codigoGráfico.DialogosDeEleccion;
 
 import javax.swing.*;
-import java.awt.*;
 
 import proyecto.codigoInterno.Zoologico;
 
-public class DialogoEleccionNombreHabitatNuevo extends JDialog{
-    private JTextField nombre;
-    private JDialog dialogoanterior;
+public class DialogoEleccionNombreHabitatNuevo extends DialogoEleccionNombreBase{
+    private String tipoHabitat;
     public DialogoEleccionNombreHabitatNuevo(JFrame ventana,JDialog dialogoanterior, String tipoHabitat){
-        super(ventana, "Elija el nombre de habitat", true);
-        this.dialogoanterior = dialogoanterior;
-        setLayout(new BorderLayout());
-        setSize(300, 100);
-        setLocationRelativeTo(null);
-        nombre = new JTextField();
-        JButton aceptar = new JButton("Aceptar");
-        aceptar.addActionListener(e -> aceptar(tipoHabitat));
-        add(nombre, BorderLayout.CENTER );
-        add(aceptar, BorderLayout.SOUTH);
+        super(ventana,dialogoanterior,"Elija el nombre de habitat");
+        this.tipoHabitat = tipoHabitat;
     }
-    private void aceptar (String tipoHabitat){
+    @Override
+    protected void aceptar (){
         Zoologico.getInstance().addHabitat(nombre.getText(), tipoHabitat);
         this.dispose();
         dialogoanterior.dispose();

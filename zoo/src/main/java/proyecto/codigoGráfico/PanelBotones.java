@@ -5,6 +5,7 @@ import javax.swing.*;
 import proyecto.codigoGráfico.DialogosDeListas.DialogoListaAlimentar;
 import proyecto.codigoGráfico.DialogosDeListas.DialogoListaDeAnimales;
 import proyecto.codigoGráfico.DialogosDeListas.DialogoListaDeHabitats;
+import proyecto.codigoInterno.Zoologico;
 
 import java.awt.*;
 
@@ -24,12 +25,22 @@ public class PanelBotones extends JPanel {
             lista.setVisible(true);
         });
         botonAnimales.addActionListener(e -> {
+            if (Zoologico.getInstance().getHabitats().size() == 0) {
+                JOptionPane.showMessageDialog(this,"Aun no hay ningun hábitat creado");
+            }
+            else{
             DialogoListaDeAnimales lista = new DialogoListaDeAnimales(ventana);
             lista.setVisible(true);
+            }
         });
         botonAlimentar.addActionListener(e -> {
+            if (Zoologico.getInstance().getHabitats().size() == 0) {
+                JOptionPane.showMessageDialog(this,"Aun no hay ningun hábitat creado");
+            }
+            else{
             DialogoListaAlimentar lista = new DialogoListaAlimentar(ventana);
             lista.setVisible(true);
+            }
         });
     }
 }
