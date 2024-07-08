@@ -2,6 +2,11 @@ package proyecto.codigoGráfico;
 
 import javax.swing.*;
 
+/**
+ * Ventana principal del Zoologico
+ * @author Ariel Cisternas
+ */
+
 public class Ventana extends JFrame {
 
     public Ventana() {
