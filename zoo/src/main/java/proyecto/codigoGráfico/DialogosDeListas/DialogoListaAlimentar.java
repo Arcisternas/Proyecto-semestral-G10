@@ -11,17 +11,28 @@ import proyecto.codigoGráfico.PanelesDeListas.PanelListaAlimentar;
 public class DialogoListaAlimentar extends DialogoListaBase {
     private Habitat habitat;
     private JButton segundoBoton;
+    private int carne;
+    private int plantas;
+    private boolean suficienteCarne;
+    private boolean suficientePlanta;
 
     public DialogoListaAlimentar(JFrame ventana) {
-        super(ventana, "Lista de Animales a Alimentar", "Botón de la izquierda");
+        super(ventana, "Lista de Animales a Alimentar", "Agregar Plantas");
         habitat = Zoologico.getInstance().getHabitatActual();
-        segundoBoton = new JButton("Botón de la derecha");
+        segundoBoton = new JButton("Agregar Carne");
         panelBoton.add(segundoBoton,BorderLayout.EAST);
+        segundoBoton.addActionListener(e -> accionSegundoBoton(ventana));
+        this.suficienteCarne = false;
+        this.suficientePlanta = false;
+        this.carne = 0;
+        this.plantas = 0;
         actualizarPanelScroll();
     }
     @Override
     protected void accionBotonPrincipal(JFrame ventana) {
         //boton de la izquierda
+        plantas++;
+        suficientePlanta = true;
         habitat.alimentarAnimales();
         actualizarPanelScroll();
     }
@@ -37,11 +48,19 @@ public class DialogoListaAlimentar extends DialogoListaBase {
         this.revalidate();
     }
     private void accionSegundoBoton(JFrame ventana){
+        carne++;
+        suficienteCarne = true;
+        actualizarPanelScroll();
         //Aqui pones lo que hace el boton de la derecha
     }
     private void Alimentar(Animal animal) {
-        JOptionPane.showMessageDialog(this, "Alimentando al animal: " + animal.getNombre() + " (" + animal.getEspecie() + ")");
-        animal.comer();
+        if(suficientePlanta || suficienteCarne){
+            JOptionPane.showMessageDialog(this, "Alimentando al animal: " + animal.getNombre() + " (" + animal.getEspecie() + ")");
+            animal.comer();
+        }else{
+            JOptionPane.showMessageDialog(this, "No hay comida suficiente para " + animal.getNombre() + " (" + animal.getEspecie() + ")");
+        }
+       
         actualizarPanelScroll();
         this.dispose();
     }
