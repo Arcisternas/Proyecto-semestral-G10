@@ -6,12 +6,20 @@ import java.awt.event.*;
 
 import proyecto.codigoInterno.Animales.*;
 
-
+/**
+ * Panel donde estaran los animales del habitat listados
+ * @author Ariel Cisternas
+ */
 
 public class PanelListaDeAnimales extends JPanel {
-    private JLabel etiquetaHabitat;
-    private String texto;
-    private JButton sacar;
+    private JLabel etiquetaHabitat; //actual
+    private String texto; //texto sobre el animal
+    private JButton sacar; //boton para sacar al animal
+    /**
+     * Constructor donde se genera el panel listando a los animales
+     * @param animal animales listados
+     * @param listener boton 
+     */
     public PanelListaDeAnimales(Animal animal, ActionListener listener) {
         setLayout(new BorderLayout());
         texto = animal.getNombre()+" ("+animal.getEspecie()+")  " + "  Animo: " + animal.getAnimo();
