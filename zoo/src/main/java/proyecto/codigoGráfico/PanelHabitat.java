@@ -11,13 +11,21 @@ import java.util.*;
 import java.util.List;
 import javax.swing.Timer;
 
+/**
+ * Panel del habitat actual (seleccionado previamente)
+ * @author Ariel Cisternas
+ */
+
 public class PanelHabitat extends JPanel { //Utilice patron singleton, ya que solo habra uno incializado y necesito acceder a el desde otras clases
-    private static PanelHabitat instance = new PanelHabitat();
-    private ImageIcon habitatImg;
-    private Zoologico zoo = Zoologico.getInstance();
-    private List<animalLabel> animalesLabels = new ArrayList<>();
-    private Timer timer;
-    private JLabel popularidadLabel;
+    private static PanelHabitat instance = new PanelHabitat(); 
+    private ImageIcon habitatImg;   //imagen del habitat actual
+    private Zoologico zoo = Zoologico.getInstance();    //instancia del zoologico (cod interno)
+    private List<animalLabel> animalesLabels = new ArrayList<>();   //imagenes de los posibles animales añadidos
+    private Timer timer;    //tiempo
+    private JLabel popularidadLabel; //popularidad del zoologico
+    /**
+     * constructor donde se determina el tamaño de la imagen y el movimiento de los animales segun el tiempo
+     */
     private PanelHabitat() {
         super();
         setLayout(null);
@@ -33,14 +41,24 @@ public class PanelHabitat extends JPanel { //Utilice patron singleton, ya que so
         timer.start();
         popularidadLabel = new JLabel();
     }
+    /**
+     * Metodo donde se genera una intancia propia 
+     * @return instancia del panel
+     */
     public static PanelHabitat getInstance() {
         return instance;
     }
+    /**
+     * Metodo para actualizar las imagenes que se visualizan (habitat, animales y la popularidad)
+     */
     public void actualizarImagenesPanel(){
         actualizarFondoPanel();
         actualizarAnimalesPanel();
         actualizarPopularidadLabel();
     }
+    /**
+     * Metodo que actualiza el Habitat actual segun la seleccion
+     */
     public void actualizarFondoPanel(){
         String tipo;
         if (zoo.getHabitatActual() == null) {
@@ -82,6 +100,9 @@ public class PanelHabitat extends JPanel { //Utilice patron singleton, ya que so
         if (habitatImg == null || habitatImg.getImage() == null) {System.out.println("Error cargando imagen");} //Probando si carga la imagen
 
     }
+    /**
+     * Metodo donde se actualizan los animales dibujadoss
+     */
     public void actualizarAnimalesPanel(){
         removeAll();
         if (zoo.getHabitatActual() != null) {
@@ -91,6 +112,9 @@ public class PanelHabitat extends JPanel { //Utilice patron singleton, ya que so
         }
         repaint();
     }
+    /**
+     * Metodo que actualiza la popularidad del zoologico
+     */
     public void actualizarPopularidadLabel(){
         remove(popularidadLabel);
         popularidadLabel.setText("Popularidad: " + zoo.getPopularidad());
@@ -98,6 +122,10 @@ public class PanelHabitat extends JPanel { //Utilice patron singleton, ya que so
         add(popularidadLabel);
         repaint();
     }
+    /**
+     * Metodo que añade la imagen del animal al habitat
+     * @param animal animal añadido
+     */
     public void añadirImagenAnimalPanel(Animal animal){
         ImageIcon imagen = animal.getImagenIcon();
         int imageWidth = imagen.getIconWidth()/15;
@@ -111,6 +139,7 @@ public class PanelHabitat extends JPanel { //Utilice patron singleton, ya que so
         animalesLabels.add(animalLabel);
         repaint();
     }
+    /**Metodo que ayuda al movimiento aleatorio de los animales */
     public void movimientoAnimales(){
         for (animalLabel animal : animalesLabels) {
             Random rand = new Random();
@@ -121,6 +150,10 @@ public class PanelHabitat extends JPanel { //Utilice patron singleton, ya que so
             animal.setLocation(x, y);
         }
     }
+    /**
+     * Metodo que ayuda a eliminar a un animal del panel como imagen segun el id de este
+     * @param animal animal a eliminar
+     */
     public void eliminarAnimalLabelPanel(Animal animal){
         for (animalLabel animalLabel : animalesLabels) {
             if (animalLabel.getIdAnimal() == animal.getId()) {
