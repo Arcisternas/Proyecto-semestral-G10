@@ -7,8 +7,19 @@ import proyecto.codigoInterno.Animales.Sabana.*;
 import proyecto.codigoInterno.Animales.Selva.*;
 import proyecto.codigoInterno.Animales.Animal;
 
+/**
+ * Clase de Fabrica de animales
+ * @author Ariel Cisternas
+ */
 
 public class FabricaDeAnimales {
+    /**
+     * Metodo para crear al animal
+     * @param nombre del animal 
+     * @param id id del animal
+     * @param tipoAnimal tipo del animal (foca, morsa, etc)
+     * @return retorna el objeto Animal
+     */
     public static Animal crearAnimal(String nombre, int id, String tipoAnimal) {
         switch (tipoAnimal) {
             case "Foca":

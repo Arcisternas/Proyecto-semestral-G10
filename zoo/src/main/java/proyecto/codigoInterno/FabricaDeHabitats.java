@@ -2,7 +2,19 @@ package proyecto.codigoInterno;
 
 
 import proyecto.codigoInterno.Habitats.*;
+
+/**
+ * Clase de Fabrica de Habitats
+ * @author Ariel Cisternas
+ */
+
 public class FabricaDeHabitats {
+    /**
+     * Metodo estatico para la creacion de habitats
+     * @param nombre nombre del habitat
+     * @param tipoHabitat tipo de habitat (sabana, bosque, etc) 
+     * @return objeto Habitat
+     */
     public static Habitat crearHabitat(String nombre, String tipoHabitat) {
         switch (tipoHabitat) {
             case "Ártico":
