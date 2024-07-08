@@ -4,9 +4,17 @@ import javax.swing.*;
 import java.awt.*;
 
 import proyecto.codigoInterno.*;
+/**
+ * Panel principal donde se visualizan botones e imagenes
+ * @author Ariel Cisternas
+ */
 
 public class PanelPrincipal extends JPanel{
     private Zoologico zoo;
+    /**
+     * Constructor donde se añaden los botones e imagenes correspondientess
+     * @param ventana principal
+     */
     public PanelPrincipal(Ventana ventana){
         super();
         zoo = Zoologico.getInstance();
