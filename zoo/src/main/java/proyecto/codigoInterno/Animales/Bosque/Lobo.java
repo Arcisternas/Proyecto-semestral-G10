@@ -18,6 +18,7 @@ public class Lobo extends Animal implements Carnivoro{
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Bosque/lobo.png"));
         animo = -3;
+        dieta = "Carnivoro";
     }
     public String getEspecie(){
         return "Lobo";

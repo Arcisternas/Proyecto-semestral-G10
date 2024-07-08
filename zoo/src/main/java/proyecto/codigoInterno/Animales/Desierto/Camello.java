@@ -13,13 +13,13 @@ public class Camello extends Animal implements Herbivoro{
     private ScheduledFuture<?> futureTask;
     private boolean come;
     private Habitat habitat;
-    
 
     public Camello(String nombre, int id){
         super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Desierto/camello.png"));
         animo = -3;
+        dieta = "Herbivoro";
     }
     public String getEspecie(){
         return "Camello";

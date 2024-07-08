@@ -14,12 +14,12 @@ public class Leon extends Animal implements Carnivoro{
     private boolean come;
     private Habitat habitat;
     
-    
     public Leon(String nombre, int id){
         super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Sabana/leon.png"));
         animo = 0;
+        dieta = "Carnivoro";
     }
     public String getEspecie(){
         return "León";

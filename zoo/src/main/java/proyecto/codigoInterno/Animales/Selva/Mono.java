@@ -19,6 +19,7 @@ public class Mono extends Animal implements Herbivoro{
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Selva/mono.png"));
         animo = -5;
+        dieta = "Herbivoro";
     }
     public String getEspecie(){
         return "Mono";

@@ -19,6 +19,7 @@ public class Cebra extends Animal implements Herbivoro{
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Sabana/cebra.png"));
         animo = -5;
+        dieta = "Herbivoro";
     }
     public String getEspecie(){
         return "Cebra";

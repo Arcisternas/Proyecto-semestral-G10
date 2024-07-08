@@ -20,6 +20,7 @@ public class Jirafa extends Animal implements Herbivoro{
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Sabana/jirafa.png"));
         animo = -5;
+        dieta = "Herbivoro";
     }
     public String getEspecie(){
         return "Jirafa";

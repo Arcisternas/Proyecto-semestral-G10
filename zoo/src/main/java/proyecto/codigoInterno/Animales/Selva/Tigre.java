@@ -20,6 +20,7 @@ public class Tigre extends Animal implements Carnivoro{
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Selva/tigre.png"));
         animo = 5;
+        dieta = "Carnivoro";
     }
     public String getEspecie(){
         return "Tigre";

@@ -19,6 +19,7 @@ public class Tucan extends Animal  implements Herbivoro{
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Selva/tucan.png")); 
         animo = 0;   
+        dieta = "Herbivoro";
     }
     public String getEspecie(){
         return "Tucán";

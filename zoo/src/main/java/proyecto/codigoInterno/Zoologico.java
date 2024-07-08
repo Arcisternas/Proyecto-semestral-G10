@@ -12,9 +12,14 @@ public class Zoologico {
     private Habitat habitatActual;
     private int animalId;
     private int popularidad;
+    private int carne;
+    private int plantas;
+
     private Zoologico() {
         habitats = new ArrayList<>();
         animalId = 0;
+        this.carne = 0;
+        this.plantas = 0;
      }
     public static Zoologico getInstance() {
         return instance;
@@ -54,5 +59,37 @@ public class Zoologico {
             popularidad += 5;
         }
         PanelHabitat.getInstance().actualizarPopularidadLabel();
+    }
+    public int getCarne(){
+        return carne;
+    }
+    public int getPlanta(){
+        return plantas;
+    }
+    public void aumentarCarne(){
+        carne++;
+    }
+    public void reducirCarne(){
+        carne--;
+    }
+    public void aumenarPlanta(){
+        plantas++;
+    }
+    public void reducirPlanta(){
+        plantas--;
+    }
+    public boolean suficienteCarne(){
+        if(carne>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public boolean suficientePlanta(){
+        if(plantas>0){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

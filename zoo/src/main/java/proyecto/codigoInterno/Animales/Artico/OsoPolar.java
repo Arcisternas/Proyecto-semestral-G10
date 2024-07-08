@@ -18,6 +18,7 @@ public class OsoPolar extends Animal implements Carnivoro{
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Artico/polar.png"));
         animo = 5;
+        dieta = "Carnivoro";
     }
     public String getEspecie(){
         return "Oso Polar";

@@ -11,7 +11,6 @@ public abstract class Animal {
     protected ImageIcon imagenIcon;
     protected int animo; 
     protected String dieta;
-
     public Animal(String nombre, int id){
         this.nombre = nombre;
         this.id = id;

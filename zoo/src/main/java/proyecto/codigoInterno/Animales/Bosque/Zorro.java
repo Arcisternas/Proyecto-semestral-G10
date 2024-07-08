@@ -18,6 +18,7 @@ public class Zorro extends Animal implements Carnivoro{
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Bosque/zorro.png"));
         animo = 5;
+        dieta = "Carnivoro";
     }
     public String getEspecie(){
         return "Zorro";

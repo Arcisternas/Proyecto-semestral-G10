@@ -14,11 +14,13 @@ public class ZorroFennec extends Animal implements Carnivoro{
     private boolean come;
     private Habitat habitat;
     
+    
     public ZorroFennec(String nombre, int id){
         super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Desierto/fennec.png"));
         animo = 2;
+        dieta = "Carnivoro";
     }
     public String getEspecie(){
         return "Zorro Fennec";

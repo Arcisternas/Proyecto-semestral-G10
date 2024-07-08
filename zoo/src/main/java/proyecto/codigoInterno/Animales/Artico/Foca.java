@@ -18,6 +18,7 @@ public class Foca extends Animal implements Carnivoro{
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Artico/foca.png"));
         animo = 0;
+        dieta = "Carnivoro";
     }
     public String getEspecie(){
         return "Foca";

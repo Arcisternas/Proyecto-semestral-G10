@@ -20,6 +20,7 @@ public class Serpiente extends Animal implements Carnivoro{
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Selva/serpiente.png"));
         animo = 5;
+        dieta = "Carnivoro";
     }
     public String getEspecie(){
         return "Serpiente";

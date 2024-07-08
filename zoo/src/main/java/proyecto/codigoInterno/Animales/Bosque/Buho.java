@@ -12,12 +12,14 @@ public class Buho extends Animal implements Carnivoro{
     private ScheduledFuture<?> futureTask;
     private boolean come;
     private Habitat habitat;
+    
 
     public Buho(String nombre, int id){
         super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Bosque/buho.png"));
         animo = 5;
+        dieta = "Carnivoro";
     }
     public String getEspecie(){
         return "Buho";

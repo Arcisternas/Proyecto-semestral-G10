@@ -18,6 +18,7 @@ public class Pinguino extends Animal implements Carnivoro{
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Artico/pinguino.png"));
         animo = -2;
+        dieta = "Carnivoro";
     }
     public String getEspecie(){
         return "Pingüino";

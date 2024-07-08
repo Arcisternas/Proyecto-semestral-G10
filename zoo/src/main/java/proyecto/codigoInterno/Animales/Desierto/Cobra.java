@@ -14,11 +14,13 @@ public class Cobra extends Animal implements Carnivoro{
     private boolean come;
     private Habitat habitat;
     
+    
     public Cobra(String nombre, int id){
         super(nombre, id);
         this.come = false;
         imagenIcon = new ImageIcon(getClass().getResource("/animales/Desierto/cobra.png"));
         animo = 5;
+        dieta = "Carnivoro";
     }
     public String getEspecie(){
         return "Cobra";
