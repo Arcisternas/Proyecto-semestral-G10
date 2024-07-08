@@ -10,6 +10,8 @@ public abstract class Animal {
     private Habitat habitatActualAnimal;
     protected ImageIcon imagenIcon;
     protected int animo; 
+    protected String dieta;
+
     public Animal(String nombre, int id){
         this.nombre = nombre;
         this.id = id;
@@ -36,6 +38,9 @@ public abstract class Animal {
         habitat.eliminarAnimal(this);
         PanelHabitat.getInstance().eliminarAnimalLabelPanel(this);
         habitat.actualizarAnimoAnimales();
+    }
+    public String getDieta(){
+        return dieta;
     }
     public abstract String getEspecie();
     public abstract String getHabitat();
